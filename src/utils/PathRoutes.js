@@ -1,5 +1,5 @@
 const PATHROUTES = {
-    LOGIN: "/",
+    LOGIN: "/login",
     HOME: "/home",
     ABOUT: "/about",
     CREATE: "/create",
