@@ -98,7 +98,7 @@ const CreateComponent = () => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: name === "equipos" ? value.split(",") : value,
+      [name]: name === "equipos" ? value.split(",").map(item => item.trim()) : value,
     });
   };
 
@@ -113,7 +113,6 @@ const CreateComponent = () => {
   };
 
   const handleEditDriver = () => {
-    // Realiza todas las validaciones
     const isValid =
       validateNotEmpty(modalFormData) &&
       validateName(modalFormData) &&
