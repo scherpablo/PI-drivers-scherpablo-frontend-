@@ -1,0 +1,48 @@
+.homeContainer {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(127, 127, 127, 0.6), rgba(255, 255, 255, 0.3)), url("https://e2.365dm.com/23/05/768x432/skysports-f1-h2h-red-bull-mercedes_6152973.jpg?20230512123305");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* min-height: 715px; */
+    /* min-height: 100vh; */
+    min-height: 100vw;
+
+    .formHome {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        top: 100px;
+        gap: 10px;
+
+        .inputSearch {
+            padding: 8px;
+            border-radius: 5px;
+            border: none;
+        }
+        .selectForm, .sortSelect {
+            padding: 7px;
+            border-radius: 5px;
+            border: none;
+        }
+        .buttonForm {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: var(--black);
+            color: var(--white);
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .buttonForm:hover {
+            background-color: var(--blackLigth);
+        }
+    }
+    
+    .currentPage {
+        text-align: center;
+        color: var(--white);
+        font-weight: 600;
+        padding-bottom: 20px;
+    }
+}

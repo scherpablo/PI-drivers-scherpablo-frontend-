@@ -1,0 +1,64 @@
+.cardsContainer {
+  width: 85vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  grid-gap: 40px;
+  padding: 50px 0 130px 0;
+}
+.cardsBtns {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding: 20px 0 40px 0;
+
+  .prevBtn,
+  .nextBtn {
+    padding: 10px 20px;
+    width: 150px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+    background-color: var(--black);
+    border: 2px solid var(--black);
+    color: var(--white);
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--blackLight);
+      transition: background-color 0.25s ease-out;
+      color: var(--black);
+    }
+  }
+  /* .prevBtn:hover,
+  .nextBtn:hover {
+    background-color: var(--blackLigth);
+    transition: background-color 0.25s ease-out;
+    color: var(--black);
+  } */
+  .firstPageBtn {
+    margin-right: -25px;
+  }
+  .lastPageBtn {
+    margin-left: -25px;
+  }
+  .firstPageBtn,
+  .lastPageBtn {
+    background-color: var(--amber400);
+    border-radius: 10px;
+    border: none;
+    width: 100px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: 2px solid var(--amber400);
+
+    &:hover {
+        background-color: var(--amber400ight);
+        transition: background-color 0.25s ease-out;
+        color: var(--amber400);
+      }
+  }
+}

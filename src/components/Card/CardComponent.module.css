@@ -1,0 +1,81 @@
+.cardComponent {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    background-color: var(--blackLigth);
+    padding: 20px;
+    width: 400px;
+    height: 500px;
+    position: relative;
+    top: 100px;
+    border-radius: 10px;
+    cursor: pointer;
+    transform: translateZ(0);
+    transition: transform 0.25s ease-out;
+    box-shadow: rgba(255, 255, 255, 0.5)  0px 0px 15px 5px;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    .imageDriver {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        box-shadow: rgba(255, 255, 255, 0.5)  0px 0px 15px 5px;
+    }
+    .nameDriver {
+        margin: 10px 0;
+        font-size: 28px;
+        color: var(--white);
+        background-color: var(--black);
+        padding: 10px;
+        border-radius: 5px;
+
+        .spanNameDriver {
+            font-style: italic;
+        }
+    }
+    .teamsDriver {
+        font-size: 14px;
+        color: var(--white);
+        text-align: center;
+        background-color: var(--black);
+        padding: 10px;
+        border-radius: 5px;
+
+        .spanTeamsDriver {
+            font-style: italic;
+            color: var(--amber400)
+        }
+    }    
+    .dobDriver {
+        margin: 10px 0;
+        font-size: 14px;
+        color: var(--white);
+        text-align: center;
+        background-color: var(--black);
+        padding: 10px;
+        border-radius: 5px;
+
+        .spanDobDriver {
+            font-style: italic;
+            color: var(--amber400)
+        }
+    }
+    .nationDriver {
+        font-size: 14px;
+        color: var(--white);
+        text-align: center;
+        background-color: var(--black);
+        padding: 10px;
+        border-radius: 5px;
+
+        .spanNationDriver {
+            font-style: italic;
+            color: var(--amber400)
+        }
+    }
+}

@@ -1,0 +1,84 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: auto;
+  overflow: hidden;
+  position: relative;
+  top: 60px;
+
+  .buttonsRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .inputRow {
+    display: flex;
+    justify-content: center;
+  }
+  .input {
+    border: 1px solid #11161f;
+    border-radius: 5px;
+    padding: 10px 25px;
+    width: 250px;
+  }
+  .link {
+    cursor: pointer;
+  }
+  .buttonAdd,
+  .buttonRandom,
+  .buttonLogout {
+    border: none;
+    border-radius: 5px;
+    color: #11161f;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    transition-duration: 0.6s;
+    cursor: pointer;
+  }
+  .buttonAdd {
+    background-color: var(--green400);
+  }
+  .buttonRandom {
+    background-color: var(--amber400);
+  }
+  .buttonLogout {
+    background-color: var(--red600);
+  }
+  .buttonAdd:hover,
+  .buttonRandom:hover,
+  .buttonLogout:hover {
+    background-color: #11161f;
+    border: 1px solid white;
+    color: white;
+  }
+}
+
+/* MEDIAS QUERY */
+@media (max-width: 1140px) {
+  .container {
+    flex-direction: column;
+  }
+}
+@media (max-width: 768px) {
+  .buttonsRow {
+    flex-direction: row;
+    align-items: center;
+  }
+  .inputRow {
+    display: flex;
+    justify-content: center;
+  }
+}
+@media (max-width: 480px) {
+  .buttonsRow {
+    transform: scale(0.8);
+  }
+}

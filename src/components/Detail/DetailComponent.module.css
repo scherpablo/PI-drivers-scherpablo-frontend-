@@ -1,0 +1,72 @@
+.containerDivDetail {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  position: relative;
+  top: 100px;
+
+  .titleDetail {
+    font-size: 50px;
+    text-align: center;
+    font-weight: 900;
+    margin-bottom: 25px;
+    color: var(--white);
+  }
+
+  .containerDriverDetail {
+    background-color: rgba(0, 0, 0, 0.2);
+    background-color: var(--blackLigth);
+    box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 15px 5px;
+    display: flex;
+    gap: 50px;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 1000px;
+    height: auto;
+
+    .containerImage {
+
+      .detailImage {
+        border-radius: 10px;
+        width: 500px;
+        height: 650px;
+      }
+    }
+
+    .containerDetails {
+
+      .detailId,  
+      .detailName,
+      .detailLastName,
+      .detailNationality,
+      .detailBirthdate,
+      .detailTeams,
+      .detailDescription {
+        font-size: 22px;
+        color: var(--white);
+        margin-bottom: 10px;
+      }
+      .detailDescription {
+        text-align: justify;
+        text-wrap: balance;
+      }
+      .detailId{
+        text-align: start;
+        text-wrap: wrap;
+      }
+      .spanName {
+        font-size: 22px;
+        font-style: italic;
+        font-weight: 800;
+        color: var(--amber400);
+      }
+      .spanDescription {
+        font-size: 16px;
+        color: var(--amber400);
+        font-style: italic;
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.aboutContainer {
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.9),
+      rgba(127, 127, 127, 0.6),
+      rgba(255, 255, 255, 0.3)
+    ),
+    url("https://www.infobae.com/new-resizer/SgdqSEtRwt62LPxeb4QoZA9M5SE=/992x558/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/5FZ3BWHK6FA73GKKPHXZSZBHFE.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /* min-height: 715px; */
+  /* min-height: 100vh; */
+  min-height: 100vw;
+}

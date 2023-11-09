@@ -1,0 +1,75 @@
+.divLogin {
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(127, 127, 127, 0.6), rgba(255, 255, 255, 0.3)), url("/img/fondo_home.jpg"); */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(127, 127, 127, 0.6), rgba(255, 255, 255, 0.3)), url("https://media.gq.com.mx/photos/62041b1eca7b0bd1ee065a33/16:9/w_1920,c_limit/SI202202090248_hires_jpeg_24bit_rgb.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    /* min-height: 715px; */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .h1Login {
+        font-size: 40px;
+        color: var(--white);
+        margin-bottom: 50px;
+    }
+
+    .formLogin {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 50px;
+        width: 350px;
+        height: 400px;
+        border-radius: 10px;
+        border: 1px solid var(--white);
+        box-shadow: rgba(255, 255, 255, 0.5) 0px 5px 15px;
+
+        .h3 {
+            font-size: 30px;
+            margin-bottom: 30px;
+            color: var(--white);
+            text-align: center;
+        }
+        .input {
+            padding: 15px 20px;
+            border-radius: 5px;
+            border: none;
+            margin-bottom: 20px;
+        }
+        .pLogin {
+            margin-top: -10px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--white);
+            .spanLogin {
+                color: var(--green400)
+            }
+        }
+
+        .formBtns {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 35px;
+
+            .btnLogin, .btnRegister {
+                padding: 10px 20px;
+                border-radius: 5px;
+                border: none;
+                width: 100px;
+                font-weight: 600;
+                background-color: var(--green400);
+                text-transform: uppercase;
+                /* color: var(--amber400) */
+            }
+            .btnRegister {
+                background-color: var(--amber400);
+                /* color: var(--green400) */
+            }
+        }
+    }
+}
