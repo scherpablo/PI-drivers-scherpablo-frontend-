@@ -2,6 +2,7 @@ import axios from "axios";
 import {
   LOGIN,
   POST_USER,
+  LOGOUT,
   GET_DRIVERS,
   GET_DRIVER_BY_ID,
   GET_DRIVER_DETAIL,
@@ -18,34 +19,50 @@ const loginUrl = import.meta.env.VITE_LOGIN_URL;
 const registerUrl = import.meta.env.VITE_REGISTER_URL;
 const driversUrl = import.meta.env.VITE_DRIVERS_URL;
 
-const login = (email, password) => {
+const login = ({ email, password }) => {
   return async (dispatch) => {
     try {
-      const { data } = await axios.post(loginUrl, email, password);
+      const { data } = await axios.post(loginUrl, { email, password });
 
-      return dispatch({
-        type: LOGIN,
-        payload: data,
-      });
+      if (data) {
+        dispatch({
+          type: LOGIN,
+          payload: data,
+        });
+        return true;
+      } else {
+        return false;
+      }
     } catch (error) {
       console.log(error);
     }
-  }
-}
+  };
+};
 
-const postUser = (email, password) => {
+const postUser = ({ email, password }) => {
   return async (dispatch) => {
     try {
-      const { data } = await axios.post(registerUrl, email, password);
+      const { data } = await axios.post(registerUrl, { email, password });
 
-      return dispatch({
-        type: POST_USER,
-        payload: data,
-      });
+      if (data) {
+        dispatch({
+          type: POST_USER,
+          payload: data,
+        });
+        return true;
+      } else {
+        return false;
+      }
     } catch (error) {
       console.log(error);
     }
-  }
+  };
+};
+
+const logout = () => {
+  return {
+    type: LOGOUT,
+  };
 }
 
 const getDrivers = () => {
@@ -76,7 +93,7 @@ const getDriverById = (id) => {
       console.log(error);
     }
   };
-}
+};
 
 const getDriverDetail = (id) => {
   return async (dispatch) => {
@@ -199,6 +216,7 @@ const deleteDriver = (id) => {
 export {
   login,
   postUser,
+  logout,
   getDrivers,
   getDriverById,
   getDriverDetail,

@@ -1,6 +1,7 @@
 import {
   LOGIN,
   POST_USER,
+  LOGOUT,
   GET_DRIVERS,
   GET_DRIVER_BY_ID,
   GET_DRIVER_DETAIL,
@@ -31,6 +32,9 @@ const rootReducer = (state = initalState, { type, payload }) => {
 
     case POST_USER:
       return { ...state, user: payload };
+
+    case LOGOUT:
+      return { ...state, user: null };
 
     case GET_DRIVERS:
       return {

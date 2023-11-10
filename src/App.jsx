@@ -1,5 +1,6 @@
 //HOOKS
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes, Navigate, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 // UTILS
 import PATHROUTES from "./utils/PathRoutes";
 //COMPONENTS
@@ -12,10 +13,12 @@ import Home from "./views/Home/Home.view";
 import Login from "./views/Login/Login.view.jsx";
 
 const App = () => {
+  const user = useSelector((state) => state.user);
+
   return (
     <>
       <div>
-        {window.location.pathname !== PATHROUTES.LOGIN && <Navbar />}
+        {user && <Navbar />}
         <Routes>
           <Route path={PATHROUTES.LOGIN} element={<Login />} />
           <Route>

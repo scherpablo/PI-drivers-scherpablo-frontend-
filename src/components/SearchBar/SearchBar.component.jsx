@@ -1,8 +1,8 @@
 //HOOKS
-import { Link } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 //ACTIONS
-import { getDrivers } from "../../redux/actions";
+import { getDrivers, logout } from "../../redux/actions";
 //UTILS
 import PATHROUTES from "../../utils/PathRoutes";
 //STYLES
@@ -10,11 +10,17 @@ import styles from "./SearchBarComponent.module.css";
 
 const SearchBarComponent = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate(); 
   const allDrivers = useSelector((state) => state.drivers);
 
   const handleHomeClick = () => {
     dispatch(getDrivers(allDrivers));
   };
+
+  const handleLogout = () => {
+    dispatch(logout())
+    navigate(PATHROUTES.LOGIN);
+  }
 
   return (
     <div className={styles.container}>
@@ -30,7 +36,7 @@ const SearchBarComponent = () => {
         </Link>
       </div>
       <div className={styles.buttonsRow}>
-        <button className={styles.buttonLogout}>Logout</button>
+        <button className={styles.buttonLogout} onClick={handleLogout}>Logout</button>
       </div>
     </div>
   );
