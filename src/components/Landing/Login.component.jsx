@@ -1,27 +1,36 @@
+//HOOKS
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom"; 
+//ACTIONS
 import { login, postUser } from "../../redux/actions";
-
+//STYLES
 import styles from "./LoginComponent.module.css";
 
 const LoginComponent = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
+  const navigate = useNavigate();
 
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleLogin = (e) => {
     e.preventDefault();
-      dispatch(login({ email, password  }));
-  }
+    dispatch(login({ email, password }));
+    navigate("/home");
+  };
 
   const handleRegister = (e) => {
     e.preventDefault();
-      dispatch(postUser({ email, password }));
-      setEmail("");
-      setPassword("");
-  }
+    dispatch(postUser({ email, password }));
+    setEmail("");
+    setPassword("");
+
+    if (user){
+      return navigate("/home");
+    }
+  };
 
   return (
     <>
@@ -52,10 +61,18 @@ const LoginComponent = () => {
             <span className={styles.spanLogin}>click aquí</span>
           </p>
           <div className={styles.formBtns}>
-            <button className={styles.btnLogin} type="button" onClick={handleLogin}>
+            <button
+              className={styles.btnLogin}
+              type="button"
+              onClick={handleLogin}
+            >
               Login
             </button>
-            <button className={styles.btnRegister} type="button" onClick={handleRegister}>
+            <button
+              className={styles.btnRegister}
+              type="button"
+              onClick={handleRegister}
+            >
               Register
             </button>
           </div>

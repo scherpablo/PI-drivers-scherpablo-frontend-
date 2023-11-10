@@ -1,5 +1,5 @@
 //HOOKS
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 // UTILS
 import PATHROUTES from "./utils/PathRoutes";
 //COMPONENTS
@@ -12,17 +12,18 @@ import Home from "./views/Home/Home.view";
 import Login from "./views/Login/Login.view.jsx";
 
 const App = () => {
-
   return (
     <>
       <div>
-        <Navbar />
+        {window.location.pathname !== PATHROUTES.LOGIN && <Navbar />}
         <Routes>
           <Route path={PATHROUTES.LOGIN} element={<Login />} />
-          <Route path={PATHROUTES.HOME} element={<Home />} />
-          <Route path={PATHROUTES.CREATE} element={<Create />} />
-          <Route path={PATHROUTES.DETAIL} element={<Detail />} />
-          <Route path={PATHROUTES.ABOUT} element={<About />} />
+          <Route>
+            <Route path={PATHROUTES.HOME} element={<Home />} />
+            <Route path={PATHROUTES.CREATE} element={<Create />} />
+            <Route path={PATHROUTES.DETAIL} element={<Detail />} />
+            <Route path={PATHROUTES.ABOUT} element={<About />} />
+          </Route>
         </Routes>
       </div>
     </>
