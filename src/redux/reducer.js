@@ -1,4 +1,6 @@
 import {
+  LOGIN,
+  POST_USER,
   GET_DRIVERS,
   GET_DRIVER_BY_ID,
   GET_DRIVER_DETAIL,
@@ -12,6 +14,7 @@ import {
 } from "./actionsTypes";
 
 const initalState = {
+  user: null,
   allDrivers: [],
   driverById: null,
   allDriversCopy: [],
@@ -23,6 +26,12 @@ const initalState = {
 
 const rootReducer = (state = initalState, { type, payload }) => {
   switch (type) {
+    case LOGIN:
+      return { ...state, user: payload };
+
+    case POST_USER:
+      return { ...state, user: payload };
+
     case GET_DRIVERS:
       return {
         ...state,

@@ -1,5 +1,7 @@
 import axios from "axios";
 import {
+  LOGIN,
+  POST_USER,
   GET_DRIVERS,
   GET_DRIVER_BY_ID,
   GET_DRIVER_DETAIL,
@@ -12,7 +14,39 @@ import {
   DELETE_DRIVER,
 } from "./actionsTypes";
 
+const loginUrl = import.meta.env.VITE_LOGIN_URL;
+const registerUrl = import.meta.env.VITE_REGISTER_URL;
 const driversUrl = import.meta.env.VITE_DRIVERS_URL;
+
+const login = (email, password) => {
+  return async (dispatch) => {
+    try {
+      const { data } = await axios.post(loginUrl, email, password);
+
+      return dispatch({
+        type: LOGIN,
+        payload: data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }
+}
+
+const postUser = (email, password) => {
+  return async (dispatch) => {
+    try {
+      const { data } = await axios.post(registerUrl, email, password);
+
+      return dispatch({
+        type: POST_USER,
+        payload: data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }
+}
 
 const getDrivers = () => {
   return async (dispatch) => {
@@ -163,6 +197,8 @@ const deleteDriver = (id) => {
 };
 
 export {
+  login,
+  postUser,
   getDrivers,
   getDriverById,
   getDriverDetail,

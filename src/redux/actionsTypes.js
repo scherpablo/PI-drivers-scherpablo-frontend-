@@ -1,3 +1,6 @@
+export const LOGIN = "LOGIN"
+export const POST_USER = "POST_USER"
+
 export const GET_DRIVERS = "GET_DRIVERS";
 export const GET_DRIVER_BY_ID = "GET_DRIVER_BY_ID";
 export const GET_DRIVER_DETAIL = "GET_DRIVER_DETAIL";
