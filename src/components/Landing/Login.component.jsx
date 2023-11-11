@@ -79,7 +79,6 @@ const LoginComponent = () => {
             <input
               className={styles.input}
               id="password"
-              // type="password"
               type={showPwd ? "text" : "password"}
               name="password"
               value={password}
@@ -88,7 +87,7 @@ const LoginComponent = () => {
             />
             <div
               className={styles.iconPwd}
-              onClick={() => setShowPwd(!showPwd)}
+              onClick={toggleShowPwd}
             >
               {showPwd ? (
                 <svg
@@ -118,7 +117,7 @@ const LoginComponent = () => {
               )}
             </div>
             <p className={styles.pLogin}>
-              Forget your password...{" "}
+              Forgot your password...{" "}
               <span className={styles.spanLogin}>click here</span>
             </p>
             <div className={styles.formBtns}>

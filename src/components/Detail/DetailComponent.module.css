@@ -22,7 +22,6 @@
   }
 
   .containerDriverDetail {
-    background-color: rgba(0, 0, 0, 0.2);
     background-color: var(--blackLigth);
     box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 15px 5px;
     display: flex;
