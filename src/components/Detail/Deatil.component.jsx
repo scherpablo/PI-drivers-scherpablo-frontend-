@@ -32,49 +32,51 @@ const DetailComponent = () => {
           {detailDriver ? (
             <>
               <div className={styles.containerImage}>
-                <img
-                  className={styles.detailImage}
-                  src={detailDriver?.imagen || detailDriver?.image?.url}
-                  alt="Imagen del Driver"
-                />
+                  <img
+                    className={styles.detailImage}
+                    src={detailDriver?.imagen || detailDriver?.image?.url}
+                    alt="Imagen del Driver"
+                  />
+                <div className={styles.divItemsDetail}>
+                  <h3 className={styles.detailId}>
+                    ID:{" "}
+                    <span className={styles.spanName}>
+                      {detailDriver?.UUID || detailDriver?.id}
+                    </span>
+                  </h3>
+                  <h3 className={styles.detailName}>
+                    Name:{" "}
+                    <span className={styles.spanName}>
+                      {detailDriver?.nombre || detailDriver?.name?.forename}
+                    </span>
+                  </h3>
+                  <h3 className={styles.detailLastName}>
+                    Last Name:{" "}
+                    <span className={styles.spanName}>
+                      {detailDriver?.apellido || detailDriver?.name?.surname}
+                    </span>
+                  </h3>
+                  <h3 className={styles.detailNationality}>
+                    Nationality:{" "}
+                    <span className={styles.spanName}>
+                      {detailDriver?.nacionalidad || detailDriver?.nationality}
+                    </span>
+                  </h3>
+                  <h3 className={styles.detailBirthdate}>
+                    Birthdate:{" "}
+                    <span className={styles.spanName}>
+                      {detailDriver?.fecha_de_nacimiento || detailDriver?.dob}
+                    </span>
+                  </h3>
+                  <h3 className={styles.detailTeams}>
+                    Teams:{" "}
+                    <span className={styles.spanName}>
+                      {teamsNames?.join(", ") || detailDriver?.teams}
+                    </span>
+                  </h3>
+                </div>
               </div>
               <div className={styles.containerDetails}>
-                <h3 className={styles.detailId}>
-                  ID:{" "}
-                  <span className={styles.spanName}>
-                    {detailDriver?.UUID || detailDriver?.id}
-                  </span>
-                </h3>
-                <h3 className={styles.detailName}>
-                  Name:{" "}
-                  <span className={styles.spanName}>
-                    {detailDriver?.nombre || detailDriver?.name?.forename}
-                  </span>
-                </h3>
-                <h3 className={styles.detailLastName}>
-                  Last Name:{" "}
-                  <span className={styles.spanName}>
-                    {detailDriver?.apellido || detailDriver?.name?.surname}
-                  </span>
-                </h3>
-                <h3 className={styles.detailNationality}>
-                  Nationality:{" "}
-                  <span className={styles.spanName}>
-                    {detailDriver?.nacionalidad || detailDriver?.nationality}
-                  </span>
-                </h3>
-                <h3 className={styles.detailBirthdate}>
-                  Birthdate:{" "}
-                  <span className={styles.spanName}>
-                    {detailDriver?.fecha_de_nacimiento || detailDriver?.dob}
-                  </span>
-                </h3>
-                <h3 className={styles.detailTeams}>
-                  Teams:{" "}
-                  <span className={styles.spanName}>
-                    {teamsNames?.join(", ") || detailDriver?.teams}
-                  </span>
-                </h3>
                 <h3 className={styles.detailDescription}>
                   Description:{" "}
                   <span className={styles.spanDescription}>

@@ -1,13 +1,19 @@
 .containerDivDetail {
-  width: 50vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0 auto;
-  position: relative;
-  top: 100px;
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.9),
+      rgba(127, 127, 127, 0.6),
+      rgba(255, 255, 255, 0.3)
+    ),
+    url("https://images.daznservices.com/di/library/DAZN_News/9f/a0/rb19-red-bull-f1_1mkfm28jzu9j214eg7lu0u1i2v.jpeg?t=482467694");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh; 
+  overflow: hidden;
 
   .titleDetail {
+    position: relative;
+    top: 90px;
     font-size: 50px;
     text-align: center;
     font-weight: 900;
@@ -20,52 +26,68 @@
     background-color: var(--blackLigth);
     box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 15px 5px;
     display: flex;
+    flex-direction: column;
     gap: 50px;
     padding: 20px;
     border-radius: 10px;
     max-width: 1000px;
     height: auto;
+    margin: 120px auto 30px auto;
 
     .containerImage {
+      display: flex;
+      gap: 20px;
 
       .detailImage {
         border-radius: 10px;
-        width: 500px;
-        height: 650px;
+        width: 350px;
+        height: auto;
       }
+      .divItemsDetail {
+        display: flex;
+        flex-direction: column;
+
+        .detailId,
+        .detailName,
+        .detailLastName,
+        .detailNationality,
+        .detailBirthdate,
+        .detailTeams,
+        .detailDescription {
+          font-size: 40px;
+          color: var(--white);
+          margin-bottom: 10px;
+        }
+        .detailId {
+          text-align: start;
+          text-wrap: wrap;
+        }
+        .spanName {
+          font-size: 32px;
+          font-style: italic;
+          font-weight: 900;
+          color: var(--amber400);
+        }
+      }
+      
     }
 
     .containerDetails {
-
-      .detailId,  
-      .detailName,
-      .detailLastName,
-      .detailNationality,
-      .detailBirthdate,
-      .detailTeams,
-      .detailDescription {
-        font-size: 22px;
-        color: var(--white);
-        margin-bottom: 10px;
-      }
       .detailDescription {
         text-align: justify;
         text-wrap: balance;
-      }
-      .detailId{
-        text-align: start;
-        text-wrap: wrap;
-      }
-      .spanName {
-        font-size: 22px;
-        font-style: italic;
-        font-weight: 800;
-        color: var(--amber400);
-      }
-      .spanDescription {
-        font-size: 16px;
-        color: var(--amber400);
-        font-style: italic;
+        padding: 20px;
+        font-size: 40px;
+        color: var(--white);
+        margin-top: -10px;
+        border-top: 1px solid var(--white);
+
+        .spanDescription {
+          font-size: 20px;
+          color: var(--amber400);
+          font-style: italic;
+          background-color: var(--);
+        }
       }
     }
   }

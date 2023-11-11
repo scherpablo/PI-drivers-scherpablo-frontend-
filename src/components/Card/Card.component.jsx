@@ -7,6 +7,7 @@ const CardComponent = ({ driver }) => {
 
   const handleDetailClick = () => {
     navigate(`/detail/${driver.id}`);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   let teamsToShow = [];

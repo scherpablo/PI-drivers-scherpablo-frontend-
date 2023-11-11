@@ -33,12 +33,6 @@
       color: var(--black);
     }
   }
-  /* .prevBtn:hover,
-  .nextBtn:hover {
-    background-color: var(--blackLigth);
-    transition: background-color 0.25s ease-out;
-    color: var(--black);
-  } */
   .firstPageBtn {
     margin-right: -25px;
   }

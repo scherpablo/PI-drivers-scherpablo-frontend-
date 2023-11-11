@@ -60,48 +60,50 @@ const LoginComponent = () => {
   return (
     <>
       <div className={styles.divLogin}>
-        <h1 className={styles.h1Login}>SPA - Drivers</h1>
-        <form className={styles.formLogin}>
-          <h3 className={styles.h3}>Login - Register</h3>
-          <input
-            className={styles.input}
-            id="email"
-            type="email"
-            name="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="📧 Email"
-          />
-          <input
-            className={styles.input}
-            id="password"
-            type="password"
-            name="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="🔐 Password"
-          />
-          <p className={styles.pLogin}>
-            Forget your password...{" "}
-            <span className={styles.spanLogin}>click here</span>
-          </p>
-          <div className={styles.formBtns}>
-            <button
-              className={styles.btnLogin}
-              type="button"
-              onClick={handleLogin}
-            >
-              Login
-            </button>
-            <button
-              className={styles.btnRegister}
-              type="button"
-              onClick={handleRegister}
-            >
-              Register
-            </button>
-          </div>
-        </form>
+        <h2 className={styles.titleLogin}>SPA - Drivers</h2>
+        <div className={styles.divForm}>
+          <form className={styles.formLogin}>
+            <h3 className={styles.h3}>Login - Register</h3>
+            <input
+              className={styles.input}
+              id="email"
+              type="email"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="📧 Email"
+            />
+            <input
+              className={styles.input}
+              id="password"
+              type="password"
+              name="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="🔐 Password"
+            />
+            <p className={styles.pLogin}>
+              Forget your password...{" "}
+              <span className={styles.spanLogin}>click here</span>
+            </p>
+            <div className={styles.formBtns}>
+              <button
+                className={styles.btnLogin}
+                type="button"
+                onClick={handleLogin}
+              >
+                Login
+              </button>
+              <button
+                className={styles.btnRegister}
+                type="button"
+                onClick={handleRegister}
+              >
+                Register
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </>
   );

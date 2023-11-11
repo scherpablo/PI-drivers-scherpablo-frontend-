@@ -25,10 +25,12 @@ const CardsComponent = ({
 
   const goToFirstPage = () => {
     setCurrentPage(1);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const goToLastPage = () => {
     setCurrentPage(totalPages);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
