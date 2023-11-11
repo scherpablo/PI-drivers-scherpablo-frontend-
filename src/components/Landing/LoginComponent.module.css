@@ -51,6 +51,11 @@
         border: none;
         margin-bottom: 20px;
       }
+      .iconPwd {
+        position: relative;
+        top: -55px;
+        left: 210px;
+      }
       .pLogin {
         margin-top: -10px;
         font-size: 12px;

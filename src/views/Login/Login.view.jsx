@@ -1,6 +1,7 @@
 import LoginComponent from "../../components/Landing/Login.component";
 
 const Login = () => {
+  
   return (
     <>
       <div>
