@@ -34,7 +34,7 @@ const App = () => {
         {user && <Navbar />}
         <Routes>
           <Route path={PATHROUTES.LOGIN} element={<Login />} />
-            <Route element={<ProtectedRoutes canActivate={user} />} >
+            <Route element={<ProtectedRoutes userLogin={user} />} >
               <Route path={PATHROUTES.HOME} element={<Home />} />
               <Route path={PATHROUTES.CREATE} element={<Create />} />
               <Route path={PATHROUTES.DETAIL} element={<Detail />} />
