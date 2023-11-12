@@ -1,6 +1,9 @@
 //HOOKS
 import { Route, Routes, Navigate, useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+//ACTIONS
+import { login } from "./redux/actions.js";
 // UTILS
 import PATHROUTES from "./utils/PathRoutes";
 //COMPONENTS
@@ -13,7 +16,16 @@ import Home from "./views/Home/Home.view";
 import Login from "./views/Login/Login.view.jsx";
 
 const App = () => {
+  const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
+
+  useEffect(() => {
+    const storedUserData = localStorage.getItem("userData");
+    if (storedUserData) {
+      const parsedUserData = JSON.parse(storedUserData);
+      dispatch(login(parsedUserData));
+    }
+  }, [dispatch]);
 
   return (
     <>

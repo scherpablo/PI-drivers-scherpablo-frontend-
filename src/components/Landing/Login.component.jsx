@@ -1,5 +1,5 @@
 //HOOKS
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 //ACTIONS
@@ -11,12 +11,12 @@ import styles from "./LoginComponent.module.css";
 
 const LoginComponent = () => {
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user);
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPwd, setShowPwd] = useState(false);
+  const [isFormValid, setIsFormValid] = useState(false);
 
   const toggleShowPwd = () => setShowPwd(!showPwd);
 
@@ -60,6 +60,10 @@ const LoginComponent = () => {
     return;
   };
 
+  useEffect(()=>{
+    setIsFormValid(validateEmail(email) && validatePassword(password));
+  }, [email, password])
+
   return (
     <>
       <div className={styles.divLogin}>
@@ -85,10 +89,7 @@ const LoginComponent = () => {
               onChange={(e) => setPassword(e.target.value)}
               placeholder="🔐 Password"
             />
-            <div
-              className={styles.iconPwd}
-              onClick={toggleShowPwd}
-            >
+            <div className={styles.iconPwd} onClick={toggleShowPwd}>
               {showPwd ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -125,6 +126,7 @@ const LoginComponent = () => {
                 className={styles.btnLogin}
                 type="button"
                 onClick={handleLogin}
+                disabled={!isFormValid}
               >
                 Login
               </button>
@@ -132,6 +134,7 @@ const LoginComponent = () => {
                 className={styles.btnRegister}
                 type="button"
                 onClick={handleRegister}
+                disabled={!isFormValid}
               >
                 Register
               </button>

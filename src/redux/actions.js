@@ -29,6 +29,7 @@ const login = ({ email, password }) => {
           type: LOGIN,
           payload: data,
         });
+        localStorage.setItem('userData', JSON.stringify(data));
         return true;
       } else {
         return false;
