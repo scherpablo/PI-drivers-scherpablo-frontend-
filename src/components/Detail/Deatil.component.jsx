@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { getDriverDetail } from "../../redux/actions";
 
@@ -8,6 +8,7 @@ import styles from "./DetailComponent.module.css";
 const DetailComponent = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const detailDriver = useSelector((state) => state.detailDriver);
 
   let teamsToShow = [];
@@ -19,6 +20,10 @@ const DetailComponent = () => {
   }
 
   const teamsNames = teamsToShow.map((team) => team.nombre);
+
+  const handleEditClick = () => {
+    navigate('/create', { state: { driverId: detailDriver?.UUID || detailDriver?.id } });
+  };
 
   useEffect(() => {
     dispatch(getDriverDetail(id));
@@ -32,11 +37,11 @@ const DetailComponent = () => {
           {detailDriver ? (
             <>
               <div className={styles.containerImage}>
-                  <img
-                    className={styles.detailImage}
-                    src={detailDriver?.imagen || detailDriver?.image?.url}
-                    alt="Imagen del Driver"
-                  />
+                <img
+                  className={styles.detailImage}
+                  src={detailDriver?.imagen || detailDriver?.image?.url}
+                  alt="Imagen del Driver"
+                />
                 <div className={styles.divItemsDetail}>
                   <h3 className={styles.detailId}>
                     ID:{" "}
@@ -83,6 +88,7 @@ const DetailComponent = () => {
                     {detailDriver?.descripcion || detailDriver?.description}
                   </span>
                 </h3>
+                <button onClick={handleEditClick}>Edit Driver in Create</button>
               </div>
             </>
           ) : (

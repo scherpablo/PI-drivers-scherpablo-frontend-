@@ -2,6 +2,7 @@ import axios from "axios";
 //HOOKS
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
 //ACTIONS
 import {
   getDriverById,
@@ -29,11 +30,14 @@ const uuidRegex =
 
 const CreateComponent = () => {
   const dispatch = useDispatch();
+  const location = useLocation();
   const driverById = useSelector((state) => state.driverById);
+  const { driverId: locationDriverId } = location.state || {};
 
-  const [driverId, setDriverId] = useState("");
+  
   const [allTeams, setAllTeams] = useState([]);
   const [showModal, setShowModal] = useState(false);
+  const [driverId, setDriverId] = useState(locationDriverId || "");
   const [formData, setFormData] = useState({
     nombre: "",
     apellido: "",
@@ -238,7 +242,7 @@ const CreateComponent = () => {
           <input
             type="text"
             placeholder="driver ID - (UUID)"
-            value={driverId}
+            value={locationDriverId || ""}
             onChange={(e) => setDriverId(e.target.value)}
           />
           <button onClick={() => openModal(driverId)}>Open Form</button>
