@@ -22,7 +22,9 @@ const DetailComponent = () => {
   const teamsNames = teamsToShow.map((team) => team.nombre);
 
   const handleEditClick = () => {
-    navigate('/create', { state: { driverId: detailDriver?.UUID || detailDriver?.id } });
+    navigate("/create", {
+      state: { driverId: detailDriver?.UUID || detailDriver?.id },
+    });
   };
 
   useEffect(() => {
@@ -79,6 +81,12 @@ const DetailComponent = () => {
                       {teamsNames?.join(", ") || detailDriver?.teams}
                     </span>
                   </h3>
+                  <button
+                    className={styles.detailButtonEdit}
+                    onClick={handleEditClick}
+                  >
+                    Edit Driver
+                  </button>
                 </div>
               </div>
               <div className={styles.containerDetails}>
@@ -88,7 +96,6 @@ const DetailComponent = () => {
                     {detailDriver?.descripcion || detailDriver?.description}
                   </span>
                 </h3>
-                <button onClick={handleEditClick}>Edit Driver in Create</button>
               </div>
             </>
           ) : (
