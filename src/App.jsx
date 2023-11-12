@@ -8,12 +8,13 @@ import { login } from "./redux/actions.js";
 import PATHROUTES from "./utils/PathRoutes";
 //COMPONENTS
 import Navbar from "./components/Navbar/Navbar.component";
+import ProtectedRoutes from "./components/Utils/ProtectedRoutes.component";
 // VIEWS
 import About from "./views/About/About.view";
 import Create from "./views/Create/Create.view";
 import Detail from "./views/Detail/Detail.view";
 import Home from "./views/Home/Home.view";
-import Login from "./views/Login/Login.view.jsx";
+import Login from "./views/Login/Login.view";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -33,12 +34,12 @@ const App = () => {
         {user && <Navbar />}
         <Routes>
           <Route path={PATHROUTES.LOGIN} element={<Login />} />
-          <Route>
-            <Route path={PATHROUTES.HOME} element={<Home />} />
-            <Route path={PATHROUTES.CREATE} element={<Create />} />
-            <Route path={PATHROUTES.DETAIL} element={<Detail />} />
-            <Route path={PATHROUTES.ABOUT} element={<About />} />
-          </Route>
+            <Route element={<ProtectedRoutes canActivate={user} />} >
+              <Route path={PATHROUTES.HOME} element={<Home />} />
+              <Route path={PATHROUTES.CREATE} element={<Create />} />
+              <Route path={PATHROUTES.DETAIL} element={<Detail />} />
+              <Route path={PATHROUTES.ABOUT} element={<About />} />
+            </Route>
         </Routes>
       </div>
     </>
