@@ -1,6 +1,6 @@
 //HOOKS
-import { Route, Routes, Navigate, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { Route, Routes } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 //ACTIONS
 import { login } from "./redux/actions.js";
@@ -28,13 +28,14 @@ const App = () => {
     }
   }, [dispatch]);
 
+
   return (
     <>
       <div>
         {user && <Navbar />}
         <Routes>
           <Route path={PATHROUTES.LOGIN} element={<Login />} />
-            <Route element={<ProtectedRoutes userLogin={user} />} >
+            <Route element={<ProtectedRoutes />} >
               <Route path={PATHROUTES.HOME} element={<Home />} />
               <Route path={PATHROUTES.CREATE} element={<Create />} />
               <Route path={PATHROUTES.DETAIL} element={<Detail />} />

@@ -18,8 +18,8 @@ const SearchBarComponent = () => {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem('userData');
     dispatch(logout())
+    localStorage.removeItem('userData');
     navigate(PATHROUTES.LOGIN);
   }
 
