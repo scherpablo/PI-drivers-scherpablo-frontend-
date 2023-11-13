@@ -8,51 +8,184 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  min-height: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 
-  .createForm {
+  .createContainerForm {
+    .createForm {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 450px;
+      position: relative;
+      top: 100px;
+      margin: 0 auto;
+      padding: 30px 50px;
+      border-radius: 10px;
+      border: 1px solid var(--white);
+      box-shadow: rgba(255, 255, 255, 0.5) 0px 5px 15px;
+
+      .createTitleForm {
+        font-size: 32px;
+        font-weight: 900;
+        text-align: center;
+      }
+      .createLabelForm {
+        margin-top: 10px;
+        font-weight: 900;
+        font-size: 18px;
+      }
+      .inputCreateForm {
+        padding: 8px;
+        border-radius: 5px;
+        border: none;
+        margin-top: 5px;
+      }
+      .buttonCreateForm {
+        margin-top: 20px;
+        padding: 8px;
+        border-radius: 5px;
+        border: none;
+        background-color: var(--black);
+        color: var(--white);
+        font-weight: 900;
+        text-transform: uppercase;
+        font-size: 16px;
+        cursor: pointer;
+        border: 2px solid var(--black);
+
+        &:hover {
+          background-color: var(--blackLight);
+          border: 2px solid var(--black);
+          color: var(--black);
+        }
+      }
+    }
+  }
+
+  .modalContainerForm {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 400px;
-    position: relative;
-    top: 200px;
     margin: 0 auto;
-    background-color: red;
-    padding: 50px;
-    border-radius: 10px;
-  }
+    position: relative;
+    top: 130px;
 
-  .modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    .textModal {
+      font-size: 18px;
+      font-weight: 900;
+    }
+    .inputId {
+      padding: 8px;
+      border-radius: 5px;
+      border: none;
+      margin: 10px 0;
+    }
+    .buttonOpenForm {
+      padding: 8px;
+      border-radius: 5px;
+      border: none;
+      background-color: var(--black);
+      color: var(--white);
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: 16px;
+      cursor: pointer;
+      border: 2px solid var(--black);
+      margin-bottom: 10px;
 
-    .modalContent {
+      &:hover {
+        background-color: var(--blackLight);
+        border: 2px solid var(--black);
+        color: var(--black);
+      }
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1;
       display: flex;
-      width: 400px;
-      border-radius: 10px;
+      align-items: center;
+      justify-content: center;
 
-      .modalForm {
+      .modalContent {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 400px;
-        position: relative;
-        top: 200px;
-        margin: 0 auto;
-        background-color: var(--amber400);
-        padding: 50px;
+        width: 450px;
         border-radius: 10px;
-        top: -50px;
+        position: relative;
+        top: -20px;
+
+        .modalForm {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          width: 450px;
+          position: relative;
+          top: 120px;
+          margin: 0 auto;
+          padding: 30px 50px;
+          border-radius: 10px;
+          border: 1px solid var(--amber400);
+          box-shadow: rgba(255, 255, 255, 0.5) 0px 5px 15px;
+          top: -35px;
+          background-color: var(--amber400);
+
+          .editTitleForm {
+            font-size: 32px;
+            font-weight: 900;
+            text-align: center;
+          }
+          .modalLabelForm {
+            margin-top: 10px;
+            font-weight: 900;
+            font-size: 18px;
+          }
+          .modalInputForm {
+            padding: 8px;
+            border-radius: 5px;
+            border: none;
+            margin-top: 5px;
+          }
+          .buttonsContainerModal {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+
+            .buttonEditModalForm,
+            .buttonDeleteModalForm,
+            .buttonCloseModalForm {
+              margin: 5px 0;
+              padding: 8px;
+              border-radius: 5px;
+              border: none;
+              font-weight: 900;
+              color: var(--white);
+              text-transform: uppercase;
+
+              &:hover {
+                cursor: pointer;
+                transform: scale(1.05);
+                transition: transform 0.25s ease-out;
+              }
+            }
+            .buttonEditModalForm {
+              background-color: var(--green400);
+            }
+            .buttonDeleteModalForm {
+              background-color: var(--red400);
+            }
+            .buttonCloseModalForm {
+              background-color: var(--black);
+            }
+          }
+        }
       }
     }
   }

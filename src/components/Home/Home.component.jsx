@@ -15,7 +15,6 @@ import CardsComponent from "../Cards/Cards.component";
 import styles from "./HomeComponent.module.css";
 
 const HomeComponent = () => {
-
   const dispatch = useDispatch();
   const allDrivers = useSelector((state) => state.allDrivers);
   const sortOrder = useSelector((state) => state.sortOrder);
@@ -47,15 +46,19 @@ const HomeComponent = () => {
 
   const handleSortChange = (e) => {
     const sortOption = e.target.value;
-    
+
     switch (sortOption) {
       case "name-asc":
       case "name-desc":
-        dispatch(sortDriversByName(sortOption.includes("asc") ? "asc" : "desc"));
+        dispatch(
+          sortDriversByName(sortOption.includes("asc") ? "asc" : "desc")
+        );
         break;
       case "birthdate-asc":
       case "birthdate-desc":
-        dispatch(sortDriversByBirthdate(sortOption.includes("asc") ? "asc" : "desc"));
+        dispatch(
+          sortDriversByBirthdate(sortOption.includes("asc") ? "asc" : "desc")
+        );
         break;
       default:
         break;
@@ -108,14 +111,10 @@ const HomeComponent = () => {
             <option value="default" disabled>
               Order By... 🗂️
             </option>
-            <option value="name-asc">Nombre ⬆️</option>
-            <option value="name-desc">Nombre ⬇️</option>
-            <option value="birthdate-asc">
-              Fecha de nacimiento ⬆️
-            </option>
-            <option value="birthdate-desc">
-              Fecha de nacimiento ⬇️
-            </option>
+            <option value="name-asc">Name ⬆️ A-Z</option>
+            <option value="name-desc">Name ⬇️ Z-A</option>
+            <option value="birthdate-asc">Birthdate ⬆️ A-Z</option>
+            <option value="birthdate-desc">Birthdate ⬇️ Z-A</option>
           </select>
         </form>
         <CardsComponent

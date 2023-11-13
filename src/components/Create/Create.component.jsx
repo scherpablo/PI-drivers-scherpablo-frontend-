@@ -34,7 +34,6 @@ const CreateComponent = () => {
   const driverById = useSelector((state) => state.driverById);
   const { driverId: locationDriverId } = location.state || "";
 
-  
   const [allTeams, setAllTeams] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [driverId, setDriverId] = useState(locationDriverId);
@@ -102,14 +101,19 @@ const CreateComponent = () => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: name === "equipos" ? value.split(",").map(item => item.trim()) : value,
+      [name]:
+        name === "equipos"
+          ? value.split(",").map((item) => item.trim())
+          : value,
     });
   };
 
   const handleChangeModal = (e) => {
     const { name, value } = e.target;
-    const newValue = Array.isArray(modalFormData[name]) ? value.split(",").map(item => item.trim()) : value;
-  
+    const newValue = Array.isArray(modalFormData[name])
+      ? value.split(",").map((item) => item.trim())
+      : value;
+
     setModalFormData((prevData) => ({
       ...prevData,
       [name]: newValue,
@@ -125,15 +129,17 @@ const CreateComponent = () => {
       validateNationality(modalFormData) &&
       validateDate(modalFormData) &&
       validateTeams(modalFormData);
-  
+
     if (isValid) {
       dispatch(updateDriver(driverId, modalFormData));
       closeModal();
     } else {
-      alert("Por favor, corrige los errores en el formulario antes de continuar.");
+      alert(
+        "Por favor, corrige los errores en el formulario antes de continuar."
+      );
     }
   };
-  
+
   const handleDeleteDriver = () => {
     dispatch(deleteDriver(driverId));
     closeModal();
@@ -184,111 +190,135 @@ const CreateComponent = () => {
   return (
     <>
       <div className={styles.createContainer}>
-        <form className={styles.createForm} onSubmit={handleSubmit}>
-          <h2>Create Driver</h2>
-          <label>Name</label>
+        <div className={styles.createContainerForm}>
+          <form className={styles.createForm} onSubmit={handleSubmit}>
+            <h2 className={styles.createTitleForm}>Create Driver</h2>
+            <label className={styles.createLabelForm}>Name</label>
+            <input
+              className={styles.inputCreateForm}
+              type="text"
+              name="nombre"
+              value={formData.nombre}
+              onChange={handleChange}
+            />
+            <label className={styles.createLabelForm}>Last Name</label>
+            <input
+              className={styles.inputCreateForm}
+              type="text"
+              name="apellido"
+              value={formData.apellido}
+              onChange={handleChange}
+            />
+            <label className={styles.createLabelForm}>Description</label>
+            <input
+              className={styles.inputCreateForm}
+              type="text"
+              name="descripcion"
+              value={formData.descripcion}
+              onChange={handleChange}
+            />
+            <label className={styles.createLabelForm}>Nationality</label>
+            <input
+              className={styles.inputCreateForm}
+              type="text"
+              name="nacionalidad"
+              value={formData.nacionalidad}
+              onChange={handleChange}
+            />
+            <label className={styles.createLabelForm}>Image (url)</label>
+            <input
+              className={styles.inputCreateForm}
+              type="text"
+              name="imagen"
+              value={formData.imagen}
+              onChange={handleChange}
+            />
+            <label className={styles.createLabelForm}>Birthdate</label>
+            <input
+              className={styles.inputCreateForm}
+              type="text"
+              name="fecha_de_nacimiento"
+              value={formData.fecha_de_nacimiento}
+              onChange={handleChange}
+            />
+            <label className={styles.createLabelForm}>Teams</label>
+            <input
+              className={styles.inputCreateForm}
+              type="text"
+              name="equipos"
+              value={formData.equipos.join(",")}
+              onChange={handleChange}
+            />
+            <button className={styles.buttonCreateForm}>Add Driver</button>
+          </form>
+        </div>
+        <div className={styles.modalContainerForm}>
+          <p className={styles.textModal}>
+            to edit or delete a driver, enter its ID
+          </p>
           <input
+            className={styles.inputId}
             type="text"
-            name="nombre"
-            value={formData.nombre}
-            onChange={handleChange}
-          />
-          <label>Last Name</label>
-          <input
-            type="text"
-            name="apellido"
-            value={formData.apellido}
-            onChange={handleChange}
-          />
-          <label>Description</label>
-          <input
-            type="text"
-            name="descripcion"
-            value={formData.descripcion}
-            onChange={handleChange}
-          />
-          <label>Nationality</label>
-          <input
-            type="text"
-            name="nacionalidad"
-            value={formData.nacionalidad}
-            onChange={handleChange}
-          />
-          <label>Image (url)</label>
-          <input
-            type="text"
-            name="imagen"
-            value={formData.imagen}
-            onChange={handleChange}
-          />
-          <label>Birthdate</label>
-          <input
-            type="text"
-            name="fecha_de_nacimiento"
-            value={formData.fecha_de_nacimiento}
-            onChange={handleChange}
-          />
-          <label>Teams</label>
-          <input
-            type="text"
-            name="equipos"
-            value={formData.equipos.join(",")}
-            onChange={handleChange}
-          />
-          <button className={styles.createButton}>Add Driver</button>
-        </form>
-        <div>
-          <p>to edit or delete a driver, enter its ID</p>
-          <input
-            type="text"
-            placeholder="driver ID - (UUID)"
+            placeholder="driver ID - type (UUID)"
             value={driverId || ""}
             onChange={(e) => setDriverId(e.target.value)}
           />
-          <button onClick={() => openModal(driverId)} onBlur={() => setDriverId("")}>Open Form</button>
-          <p>valid only for DB drivers</p>
+          <button
+            className={styles.buttonOpenForm}
+            onClick={() => openModal(driverId)}
+            onBlur={() => setDriverId("")}
+          >
+            Open Edit Form
+          </button>
+          <p className={styles.textModal}>valid only for DB drivers</p>
           {showModal && (
             <div className={styles.modal}>
               <div className={styles.modalContent}>
                 <form className={styles.modalForm}>
-                  <h2>Edit - Delete Driver</h2>
-                  <label>Name</label>
+                  <h2 className={styles.editTitleForm}>Edit - Delete Driver</h2>
+                  <label className={styles.modalLabelForm}>Name</label>
                   <input
+                    className={styles.modalInputForm}
                     type="text"
                     name="nombre"
                     value={modalFormData ? modalFormData.nombre : ""}
                     onChange={handleChangeModal}
                   />
-                  <label>Last Name</label>
+                  <label className={styles.modalLabelForm}>Last Name</label>
                   <input
+                    className={styles.modalInputForm}
                     type="text"
                     name="apellido"
                     value={modalFormData ? modalFormData.apellido : ""}
                     onChange={handleChangeModal}
                   />
-                  <label>Description</label>
+                  <label className={styles.modalLabelForm}>Description</label>
                   <input
+                    className={styles.modalInputForm}
                     type="text"
                     name="descripcion"
                     value={modalFormData ? modalFormData.descripcion : ""}
                     onChange={handleChangeModal}
                   />
-                  <label>Nationality</label>
+                  <label className={styles.modalLabelForm}>Nationality</label>
                   <input
+                    className={styles.modalInputForm}
                     type="text"
                     name="nacionalidad"
                     value={modalFormData ? modalFormData.nacionalidad : ""}
                     onChange={handleChangeModal}
                   />
-                  <label>Image (url)</label>
+                  <label className={styles.modalLabelForm}>Image (url)</label>
                   <input
+                    className={styles.modalInputForm}
                     type="text"
                     name="imagen"
                     value={modalFormData ? modalFormData.imagen : ""}
                     onChange={handleChangeModal}
                   />
-                  <label>Birthdate</label>
+                  <label className={styles.modalLabelForm}>Birthdate</label>
                   <input
+                    className={styles.modalInputForm}
                     type="text"
                     name="fecha_de_nacimiento"
                     value={
@@ -296,8 +326,9 @@ const CreateComponent = () => {
                     }
                     onChange={handleChangeModal}
                   />
-                  <label>Teams</label>
+                  <label className={styles.modalLabelForm}>Teams</label>
                   <input
+                    className={styles.modalInputForm}
                     type="text"
                     name="equipos"
                     value={
@@ -307,15 +338,29 @@ const CreateComponent = () => {
                     }
                     onChange={handleChangeModal}
                   />
-                  <button type="button" onClick={handleEditDriver}>
-                    Edit Driver
-                  </button>
-                  <button type="button" onClick={handleDeleteDriver}>
-                    Delete Driver
-                  </button>
-                  <button type="button" onClick={closeModal}>
-                    Cerrar
-                  </button>
+                  <div className={styles.buttonsContainerModal}>
+                    <button
+                      className={styles.buttonEditModalForm}
+                      type="button"
+                      onClick={handleEditDriver}
+                    >
+                      Edit Driver
+                    </button>
+                    <button
+                      className={styles.buttonDeleteModalForm}
+                      type="button"
+                      onClick={handleDeleteDriver}
+                    >
+                      Delete Driver
+                    </button>
+                    <button
+                      className={styles.buttonCloseModalForm}
+                      type="button"
+                      onClick={closeModal}
+                    >
+                      Close Form
+                    </button>
+                  </div>
                 </form>
               </div>
             </div>
