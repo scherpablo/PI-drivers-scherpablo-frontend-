@@ -32,12 +32,12 @@ const CreateComponent = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const driverById = useSelector((state) => state.driverById);
-  const { driverId: locationDriverId } = location.state || {};
+  const { driverId: locationDriverId } = location.state || "";
 
   
   const [allTeams, setAllTeams] = useState([]);
   const [showModal, setShowModal] = useState(false);
-  const [driverId, setDriverId] = useState(locationDriverId || "");
+  const [driverId, setDriverId] = useState(locationDriverId);
   const [formData, setFormData] = useState({
     nombre: "",
     apellido: "",
@@ -242,10 +242,10 @@ const CreateComponent = () => {
           <input
             type="text"
             placeholder="driver ID - (UUID)"
-            value={locationDriverId || ""}
+            value={driverId || ""}
             onChange={(e) => setDriverId(e.target.value)}
           />
-          <button onClick={() => openModal(driverId)}>Open Form</button>
+          <button onClick={() => openModal(driverId)} onBlur={() => setDriverId("")}>Open Form</button>
           <p>valid only for DB drivers</p>
           {showModal && (
             <div className={styles.modal}>
