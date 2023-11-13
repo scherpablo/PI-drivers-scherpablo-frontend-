@@ -17,6 +17,8 @@ const LoginComponent = () => {
   const [password, setPassword] = useState("");
   const [showPwd, setShowPwd] = useState(false);
   const [isFormValid, setIsFormValid] = useState(false);
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
 
   const toggleShowPwd = () => setShowPwd(!showPwd);
 
@@ -24,13 +26,16 @@ const LoginComponent = () => {
     e.preventDefault();
 
     if (!validateEmail(email)) {
-      alert("formato de correo invalido");
-      return;
+      setEmailError("formato de correo invalido");
+      return
+    }else {
+      setEmailError("");
     }
 
-    if (!validatePassword(password)) {
-      alert("formato password invalido");
-      return;
+    if (!validatePassword(password)){
+      setPasswordError("formato password invalido");
+    }else {
+      setPasswordError("");
     }
 
     const loginSuccess = await dispatch(login({ email, password }));
@@ -77,18 +82,28 @@ const LoginComponent = () => {
               type="email"
               name="email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => {
+                const trimmedValue = e.target.value.trim();
+                setEmail(trimmedValue);
+                setEmailError(trimmedValue.length > 0 && !validateEmail(trimmedValue) ? "Formato de correo inválido" : "");
+              }}
               placeholder="📧 Email"
             />
+            {emailError && <p className={styles.errorMsg}>{emailError}</p>}
             <input
               className={styles.input}
               id="password"
               type={showPwd ? "text" : "password"}
               name="password"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e) => {
+                const trimmedValue = e.target.value.trim();
+                setPassword(trimmedValue);
+                setPasswordError(trimmedValue.length > 0 && !validatePassword(trimmedValue) ? "Formato de contraseña inválido" : "");
+              }}
               placeholder="🔐 Password"
             />
+            {passwordError && <p className={styles.errorMsg}>{passwordError}</p>}
             <div className={styles.iconPwd} onClick={toggleShowPwd}>
               {showPwd ? (
                 <svg

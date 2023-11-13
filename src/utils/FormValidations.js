@@ -31,7 +31,7 @@ const validateName = (value) => {
 
 const validateLastName = (value) => {
   if (value.apellido.length < 5 || value.apellido.length > 25) {
-    alert("mínimo 5 caracteres, máximo 25 para el apellido");
+    alert("apellido: mínimo 5 caracteres, máximo 25");
     return false;
   } else if (containsSymbols(value.apellido)) {
     alert("el apellido no puede contener símbolos");
@@ -42,7 +42,7 @@ const validateLastName = (value) => {
 
 const validateDescription = (value) => {
   if (value.descripcion.length < 10 || value.descripcion.length > 100) {
-    alert("mínimo 10 caracteres, máximo 100 para la descripción");
+    alert("descripción: mínimo 10 caracteres, máximo 100");
     return false;
   } else if (containsSymbols(value.descripcion)) {
     alert("la descripción no puede contener símbolos");
@@ -65,7 +65,7 @@ const validateNationality = (value) => {
 const validateDate = (value) => {
   const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
   if (!dateRegex.test(value.fecha_de_nacimiento)) {
-    alert("Formato de fecha inválido. Utiliza el formato aaaa-mm-dd");
+    alert("utiliza el formato aaaa-mm-dd");
     return false;
   }
   return true;
@@ -74,9 +74,7 @@ const validateDate = (value) => {
 const validateTeams = (value) => {
   const teamsRegex = /^\d+(,\d+)*$/;
   if (!teamsRegex.test(value.equipos.join(","))) {
-    alert(
-      "Formato de equipos inválido, utiliza números separados por comas sin espacios (1,6,10,24)"
-    );
+    alert("utiliza números separados por comas sin espacios -  1,6,10,24");
     return false;
   }
   return true;

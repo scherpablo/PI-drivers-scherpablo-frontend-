@@ -84,7 +84,6 @@ const CreateComponent = () => {
     ) {
       return;
     }
-
     dispatch(createDriver(formData));
     setFormData({
       nombre: "",
@@ -191,7 +190,7 @@ const CreateComponent = () => {
     <>
       <div className={styles.createContainer}>
         <div className={styles.createContainerForm}>
-          <form className={styles.createForm} onSubmit={handleSubmit}>
+          <form className={styles.createForm}>
             <h2 className={styles.createTitleForm}>Crear Piloto</h2>
             <label className={styles.createLabelForm}>Nombre</label>
             <input
@@ -233,7 +232,9 @@ const CreateComponent = () => {
               value={formData.imagen}
               onChange={handleChange}
             />
-            <label className={styles.createLabelForm}>Fecha de Nacimiento</label>
+            <label className={styles.createLabelForm}>
+              Fecha de Nacimiento
+            </label>
             <input
               className={styles.inputCreateForm}
               type="text"
@@ -249,7 +250,13 @@ const CreateComponent = () => {
               value={formData.equipos.join(",")}
               onChange={handleChange}
             />
-            <button className={styles.buttonCreateForm}>Agregar Piloto</button>
+            <button
+              className={styles.buttonCreateForm}
+              type="button"
+              onClick={handleSubmit}
+            >
+              Agregar Piloto
+            </button>
           </form>
         </div>
         <div className={styles.modalContainerForm}>
@@ -270,7 +277,9 @@ const CreateComponent = () => {
           >
             Formulario de Edición
           </button>
-          <p className={styles.textModal}>solo válido para pilotos de la Base de Datos</p>
+          <p className={styles.textModal}>
+            solo válido para pilotos de la Base de Datos
+          </p>
           {showModal && (
             <div className={styles.modal}>
               <div className={styles.modalContent}>
@@ -316,7 +325,9 @@ const CreateComponent = () => {
                     value={modalFormData ? modalFormData.imagen : ""}
                     onChange={handleChangeModal}
                   />
-                  <label className={styles.modalLabelForm}>Fecha de Nacimiento</label>
+                  <label className={styles.modalLabelForm}>
+                    Fecha de Nacimiento
+                  </label>
                   <input
                     className={styles.modalInputForm}
                     type="text"

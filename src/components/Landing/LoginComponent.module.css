@@ -50,13 +50,20 @@
         border: none;
         margin-bottom: 20px;
       }
+      .errorMsg {
+        color: var(--red400);
+        font-size: 0.8em;
+        margin-top: -15px;
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
       .iconPwd {
         position: relative;
         top: -55px;
         left: 210px;
       }
       .pLogin {
-        margin-top: -35px;
+        margin-top: -25px;
         font-size: 12px;
         font-weight: 600;
         color: var(--white);
@@ -79,11 +86,9 @@
           font-weight: 600;
           background-color: var(--green400);
           text-transform: uppercase;
-          /* color: var(--amber400) */
         }
         .btnRegister {
           background-color: var(--amber400);
-          /* color: var(--green400) */
         }
       }
     }
