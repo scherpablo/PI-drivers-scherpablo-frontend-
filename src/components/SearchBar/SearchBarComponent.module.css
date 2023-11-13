@@ -32,7 +32,6 @@
   .buttonLogout {
     border: none;
     border-radius: 5px;
-    color: #11161f;
     padding: 10px 25px;
     text-align: center;
     text-decoration: none;
@@ -42,6 +41,7 @@
     font-weight: bold;
     transition-duration: 0.6s;
     cursor: pointer;
+    width: 180px;
   }
   .buttonAdd {
     background-color: var(--green400);

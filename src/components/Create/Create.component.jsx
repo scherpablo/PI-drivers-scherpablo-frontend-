@@ -192,8 +192,8 @@ const CreateComponent = () => {
       <div className={styles.createContainer}>
         <div className={styles.createContainerForm}>
           <form className={styles.createForm} onSubmit={handleSubmit}>
-            <h2 className={styles.createTitleForm}>Create Driver</h2>
-            <label className={styles.createLabelForm}>Name</label>
+            <h2 className={styles.createTitleForm}>Crear Piloto</h2>
+            <label className={styles.createLabelForm}>Nombre</label>
             <input
               className={styles.inputCreateForm}
               type="text"
@@ -201,7 +201,7 @@ const CreateComponent = () => {
               value={formData.nombre}
               onChange={handleChange}
             />
-            <label className={styles.createLabelForm}>Last Name</label>
+            <label className={styles.createLabelForm}>Apellido</label>
             <input
               className={styles.inputCreateForm}
               type="text"
@@ -209,7 +209,7 @@ const CreateComponent = () => {
               value={formData.apellido}
               onChange={handleChange}
             />
-            <label className={styles.createLabelForm}>Description</label>
+            <label className={styles.createLabelForm}>Descripción</label>
             <input
               className={styles.inputCreateForm}
               type="text"
@@ -217,7 +217,7 @@ const CreateComponent = () => {
               value={formData.descripcion}
               onChange={handleChange}
             />
-            <label className={styles.createLabelForm}>Nationality</label>
+            <label className={styles.createLabelForm}>Nacionalidad</label>
             <input
               className={styles.inputCreateForm}
               type="text"
@@ -225,7 +225,7 @@ const CreateComponent = () => {
               value={formData.nacionalidad}
               onChange={handleChange}
             />
-            <label className={styles.createLabelForm}>Image (url)</label>
+            <label className={styles.createLabelForm}>Imagen (url)</label>
             <input
               className={styles.inputCreateForm}
               type="text"
@@ -233,7 +233,7 @@ const CreateComponent = () => {
               value={formData.imagen}
               onChange={handleChange}
             />
-            <label className={styles.createLabelForm}>Birthdate</label>
+            <label className={styles.createLabelForm}>Fecha de Nacimiento</label>
             <input
               className={styles.inputCreateForm}
               type="text"
@@ -241,7 +241,7 @@ const CreateComponent = () => {
               value={formData.fecha_de_nacimiento}
               onChange={handleChange}
             />
-            <label className={styles.createLabelForm}>Teams</label>
+            <label className={styles.createLabelForm}>Equipos</label>
             <input
               className={styles.inputCreateForm}
               type="text"
@@ -249,17 +249,17 @@ const CreateComponent = () => {
               value={formData.equipos.join(",")}
               onChange={handleChange}
             />
-            <button className={styles.buttonCreateForm}>Add Driver</button>
+            <button className={styles.buttonCreateForm}>Agregar Piloto</button>
           </form>
         </div>
         <div className={styles.modalContainerForm}>
           <p className={styles.textModal}>
-            to edit or delete a driver, enter its ID
+            para editar o eliminar un piloto ingresa el ID
           </p>
           <input
             className={styles.inputId}
             type="text"
-            placeholder="driver ID - type (UUID)"
+            placeholder="solo admite IDs de tipo UUID"
             value={driverId || ""}
             onChange={(e) => setDriverId(e.target.value)}
           />
@@ -268,15 +268,15 @@ const CreateComponent = () => {
             onClick={() => openModal(driverId)}
             onBlur={() => setDriverId("")}
           >
-            Open Edit Form
+            Formulario de Edición
           </button>
-          <p className={styles.textModal}>valid only for DB drivers</p>
+          <p className={styles.textModal}>solo válido para pilotos de la Base de Datos</p>
           {showModal && (
             <div className={styles.modal}>
               <div className={styles.modalContent}>
                 <form className={styles.modalForm}>
-                  <h2 className={styles.editTitleForm}>Edit - Delete Driver</h2>
-                  <label className={styles.modalLabelForm}>Name</label>
+                  <h2 className={styles.editTitleForm}>Editar - Eliminar</h2>
+                  <label className={styles.modalLabelForm}>Nombre</label>
                   <input
                     className={styles.modalInputForm}
                     type="text"
@@ -284,7 +284,7 @@ const CreateComponent = () => {
                     value={modalFormData ? modalFormData.nombre : ""}
                     onChange={handleChangeModal}
                   />
-                  <label className={styles.modalLabelForm}>Last Name</label>
+                  <label className={styles.modalLabelForm}>Apellido</label>
                   <input
                     className={styles.modalInputForm}
                     type="text"
@@ -292,7 +292,7 @@ const CreateComponent = () => {
                     value={modalFormData ? modalFormData.apellido : ""}
                     onChange={handleChangeModal}
                   />
-                  <label className={styles.modalLabelForm}>Description</label>
+                  <label className={styles.modalLabelForm}>Descripción</label>
                   <input
                     className={styles.modalInputForm}
                     type="text"
@@ -300,7 +300,7 @@ const CreateComponent = () => {
                     value={modalFormData ? modalFormData.descripcion : ""}
                     onChange={handleChangeModal}
                   />
-                  <label className={styles.modalLabelForm}>Nationality</label>
+                  <label className={styles.modalLabelForm}>Nacionalidad</label>
                   <input
                     className={styles.modalInputForm}
                     type="text"
@@ -308,7 +308,7 @@ const CreateComponent = () => {
                     value={modalFormData ? modalFormData.nacionalidad : ""}
                     onChange={handleChangeModal}
                   />
-                  <label className={styles.modalLabelForm}>Image (url)</label>
+                  <label className={styles.modalLabelForm}>Imagen (url)</label>
                   <input
                     className={styles.modalInputForm}
                     type="text"
@@ -316,7 +316,7 @@ const CreateComponent = () => {
                     value={modalFormData ? modalFormData.imagen : ""}
                     onChange={handleChangeModal}
                   />
-                  <label className={styles.modalLabelForm}>Birthdate</label>
+                  <label className={styles.modalLabelForm}>Fecha de Nacimiento</label>
                   <input
                     className={styles.modalInputForm}
                     type="text"
@@ -326,7 +326,7 @@ const CreateComponent = () => {
                     }
                     onChange={handleChangeModal}
                   />
-                  <label className={styles.modalLabelForm}>Teams</label>
+                  <label className={styles.modalLabelForm}>Equipos</label>
                   <input
                     className={styles.modalInputForm}
                     type="text"
@@ -344,21 +344,21 @@ const CreateComponent = () => {
                       type="button"
                       onClick={handleEditDriver}
                     >
-                      Edit Driver
+                      Editar
                     </button>
                     <button
                       className={styles.buttonDeleteModalForm}
                       type="button"
                       onClick={handleDeleteDriver}
                     >
-                      Delete Driver
+                      Eliminar
                     </button>
                     <button
                       className={styles.buttonCloseModalForm}
                       type="button"
                       onClick={closeModal}
                     >
-                      Close Form
+                      Cerrar
                     </button>
                   </div>
                 </form>

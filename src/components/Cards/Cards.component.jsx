@@ -42,16 +42,16 @@ const CardsComponent = ({
       </div>
       <div className={styles.cardsBtns}>
         <button className={styles.firstPageBtn} onClick={goToFirstPage}>
-          First Page
+          Primer Página
         </button>
         <button className={styles.prevBtn} onClick={previousPage}>
-          « Previous
+          « Atrás
         </button>
         <button className={styles.nextBtn} onClick={nextPage}>
-          Next »
+          Adelante »
         </button>
         <button className={styles.lastPageBtn} onClick={goToLastPage}>
-          Last Page
+          Última Página
         </button>
       </div>
     </>

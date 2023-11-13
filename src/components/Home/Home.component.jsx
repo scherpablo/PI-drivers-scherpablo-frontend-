@@ -81,8 +81,8 @@ const HomeComponent = () => {
             type="search"
             placeholder={
               activeFilter === "name"
-                ? "search by name 🔍"
-                : "search by team 🔍"
+                ? "buscar por nombre 🔍"
+                : "buscar por equipo  🔍"
             }
             value={activeFilter === "name" ? nameFilter : teamFilter}
             onChange={(e) =>
@@ -97,11 +97,11 @@ const HomeComponent = () => {
             onChange={(e) => setActiveFilter(e.target.value)}
             value={activeFilter}
           >
-            <option value="name">Name</option>
-            <option value="team">Team</option>
+            <option value="name">Nombre</option>
+            <option value="team">Equipo</option>
           </select>
           <button className={styles.buttonForm} type="submit">
-            Filter
+            Filtrar
           </button>
           <select
             className={styles.sortSelect}
@@ -109,12 +109,12 @@ const HomeComponent = () => {
             value={sortOrder || "default"}
           >
             <option value="default" disabled>
-              Order By... 🗂️
+              Ordenar por... 🗂️
             </option>
-            <option value="name-asc">Name ⬆️ A-Z</option>
-            <option value="name-desc">Name ⬇️ Z-A</option>
-            <option value="birthdate-asc">Birthdate ⬆️ A-Z</option>
-            <option value="birthdate-desc">Birthdate ⬇️ Z-A</option>
+            <option value="name-asc">Nombre ⬆️ A-Z</option>
+            <option value="name-desc">Nombre ⬇️ Z-A</option>
+            <option value="birthdate-asc">Nacimiento ⬆️ A-Z</option>
+            <option value="birthdate-desc">Nacimiento ⬇️ Z-A</option>
           </select>
         </form>
         <CardsComponent

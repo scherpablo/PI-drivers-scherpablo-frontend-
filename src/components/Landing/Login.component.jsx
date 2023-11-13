@@ -70,7 +70,7 @@ const LoginComponent = () => {
         <h2 className={styles.titleLogin}>SPA - Drivers</h2>
         <div className={styles.divForm}>
           <form className={styles.formLogin}>
-            <h3 className={styles.h3}>Login - Register</h3>
+            <h3 className={styles.h3}>Ingreso - Registro</h3>
             <input
               className={styles.input}
               id="email"
@@ -118,8 +118,8 @@ const LoginComponent = () => {
               )}
             </div>
             <p className={styles.pLogin}>
-              Forgot your password...{" "}
-              <span className={styles.spanLogin}>click here</span>
+              Olvidsate tu contraseña...{" "}
+              <span className={styles.spanLogin}>click aquí</span>
             </p>
             <div className={styles.formBtns}>
               <button
@@ -128,7 +128,7 @@ const LoginComponent = () => {
                 onClick={handleLogin}
                 disabled={!isFormValid}
               >
-                Login
+                Ingreso
               </button>
               <button
                 className={styles.btnRegister}
@@ -136,7 +136,7 @@ const LoginComponent = () => {
                 onClick={handleRegister}
                 disabled={!isFormValid}
               >
-                Register
+                Registro
               </button>
             </div>
           </form>

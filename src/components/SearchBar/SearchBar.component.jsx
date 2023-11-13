@@ -27,17 +27,17 @@ const SearchBarComponent = () => {
     <div className={styles.container}>
       <div className={styles.buttonsRow}>
         <Link to={PATHROUTES.ABOUT}>
-          <button className={styles.buttonLogout}>About</button>
+          <button className={styles.buttonLogout}>Acerda de</button>
         </Link>
         <Link className={styles.link} to={PATHROUTES.CREATE}>
-          <button className={styles.buttonRandom}>Create</button>
+          <button className={styles.buttonRandom}>Crear/Editar</button>
         </Link>
         <Link to={PATHROUTES.HOME}>
-          <button className={styles.buttonAdd} onClick={handleHomeClick}>Home</button>
+          <button className={styles.buttonAdd} onClick={handleHomeClick}>Inicio</button>
         </Link>
       </div>
       <div className={styles.buttonsRow}>
-        <button className={styles.buttonLogout} onClick={handleLogout}>Logout</button>
+        <button className={styles.buttonLogout} onClick={handleLogout}>Cerrar Sesion</button>
       </div>
     </div>
   );
