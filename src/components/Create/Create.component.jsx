@@ -146,7 +146,7 @@ const CreateComponent = () => {
 
   const openModal = (driverId) => {
     if (!uuidRegex.test(driverId)) {
-      alert("Enter an ID of type UUID");
+      alert("no se puede editar este piloto");
     } else {
       try {
         dispatch(getDriverById(driverId))

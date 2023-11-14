@@ -30,7 +30,7 @@ const SearchBarComponent = () => {
           <button className={styles.buttonLogout}>Acerda de</button>
         </Link>
         <Link className={styles.link} to={PATHROUTES.CREATE}>
-          <button className={styles.buttonRandom}>Crear/Editar</button>
+          <button className={styles.buttonRandom}>Crear - Editar</button>
         </Link>
         <Link to={PATHROUTES.HOME}>
           <button className={styles.buttonAdd} onClick={handleHomeClick}>Inicio</button>

@@ -10,7 +10,6 @@ export default defineConfig({
       }
     }
   },
-  root:'./src',
   testEnvironment: 'jsdom',
   testMatch: ['**/__tests__/**/*.{js,cjs,ts,jsx,tsx}'],
 })
