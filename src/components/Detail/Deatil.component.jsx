@@ -85,7 +85,7 @@ const DetailComponent = () => {
                     className={styles.detailButtonEdit}
                     onClick={handleEditClick}
                   >
-                    Edit Driver
+                    Editar Piloto
                   </button>
                 </div>
               </div>
