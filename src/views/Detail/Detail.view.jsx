@@ -1,4 +1,4 @@
-import DetailComponent from '../../components/Detail/Deatil.component'
+import DetailComponent from '../../components/Detail/Detail.component'
 
 const Detail = () => {
   return (
