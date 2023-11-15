@@ -1,7 +1,8 @@
 import { useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { getDriverDetail } from "../../redux/actions";
+import PATHROUTES from "../../utils/PathRoutes";
 
 import styles from "./DetailComponent.module.css";
 
@@ -81,12 +82,19 @@ const DetailComponent = () => {
                       {teamsNames?.join(", ") || detailDriver?.teams}
                     </span>
                   </h3>
-                  <button
-                    className={styles.detailButtonEdit}
-                    onClick={handleEditClick}
-                  >
-                    Editar Piloto
-                  </button>
+                  <div className={styles.divButtons}>
+                    <button
+                      className={styles.detailButtonEdit}
+                      onClick={handleEditClick}
+                    >
+                      Editar Piloto
+                    </button>
+                    <Link to={PATHROUTES.HOME}>
+                      <button className={styles.detailButtonEdit}>
+                        Volver a Inicio
+                      </button>
+                    </Link>
+                  </div>
                 </div>
               </div>
               <div className={styles.containerDetails}>
