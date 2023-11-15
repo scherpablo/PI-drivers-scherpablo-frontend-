@@ -27,7 +27,7 @@ const DetailComponent = () => {
 
   const handleEditClick = () => {
     navigate("/create", {
-      state: { driverId: detailDriver?.UUID || detailDriver?.id },
+      state: { driverId: detailDriver?.UUID || detailDriver?.id, editMode: true },
     });
   };
 

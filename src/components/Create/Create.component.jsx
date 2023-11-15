@@ -2,6 +2,7 @@ import axios from "axios";
 //HOOKS
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
 //ACTIONS
 import {
   getDriverById,
@@ -29,9 +30,11 @@ const uuidRegex =
 
 const CreateComponent = () => {
   const dispatch = useDispatch();
+  const location = useLocation();
   const driverById = useSelector((state) => state.driverById);
+  const locationDriverId = location.state ? location.state.driverId : "";
 
-  const [driverId, setDriverId] = useState("");
+  const [driverId, setDriverId] = useState(locationDriverId);
   const [allTeams, setAllTeams] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState({
@@ -169,6 +172,11 @@ const CreateComponent = () => {
       }
     }
   };
+
+  const clearDriverId = () => {
+    setDriverId("");
+  };
+  
 
   const closeModal = () => {
     setShowModal(false);
@@ -349,14 +357,20 @@ const CreateComponent = () => {
                     <button
                       className={styles.buttonEditModalForm}
                       type="button"
-                      onClick={handleEditDriver}
+                      onClick={() => {
+                        handleEditDriver();
+                        setTimeout(clearDriverId, 100);
+                      }}
                     >
                       Editar
                     </button>
                     <button
                       className={styles.buttonDeleteModalForm}
                       type="button"
-                      onClick={handleDeleteDriver}
+                      onClick={() => {
+                        handleDeleteDriver();
+                        setTimeout(clearDriverId, 100);
+                      }}
                     >
                       Eliminar
                     </button>
