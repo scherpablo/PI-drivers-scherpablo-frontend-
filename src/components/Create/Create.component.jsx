@@ -128,7 +128,6 @@ const CreateComponent = () => {
 
     if (isValid) {
       dispatch(updateDriver(driverId, modalFormData));
-      console.log("modalFormData después de updateDriver:", modalFormData);
       closeModal();
     } else {
       alert(

@@ -1,9 +1,12 @@
+//HOOKS
 import { useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+//ACTIONS
 import { getDriverDetail } from "../../redux/actions";
+//ROUTES
 import PATHROUTES from "../../utils/PathRoutes";
-
+//STYLES
 import styles from "./DetailComponent.module.css";
 
 const DetailComponent = () => {
