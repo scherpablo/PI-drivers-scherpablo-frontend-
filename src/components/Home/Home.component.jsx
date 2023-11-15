@@ -144,41 +144,49 @@ const HomeComponent = () => {
             <option value="birthdate-desc">Nacimiento ⬇️ Z-A</option>
           </select>
         </form>
-        <CardsComponent
-          allDrivers={allDrivers}
-          currentPage={currentPage}
-          pageSize={pageSize}
-          setCurrentPage={handlePageChange}
-        />
-        <div className={styles.pagination}>
-          <button
-            className={styles.paginationButton}
-            onClick={handlePrevBlock}
-            disabled={currentPage <= 1}
-          >
-            Anterior
-          </button>
-          {generatePageNumbers().map((page) => (
-            <button
-              key={page}
-              className={
-                page === currentPage
-                  ? styles.currentPageButton
-                  : styles.pageButton
-              }
-              onClick={() => handlePageChange(page)}
-            >
-              {page}
-            </button>
-          ))}
-          <button
-            className={styles.paginationButton}
-            onClick={handleNextBlock}
-            disabled={currentPage >= totalPages}
-          >
-            Siguiente
-          </button>
-        </div>
+        {allDrivers.length === 0 && (
+          <p className={styles.noResultsMsg}>No se encontraron resultados.</p>
+        )}
+
+        {allDrivers.length > 0 && (
+          <>
+            <CardsComponent
+              allDrivers={allDrivers}
+              currentPage={currentPage}
+              pageSize={pageSize}
+              setCurrentPage={handlePageChange}
+            />
+            <div className={styles.pagination}>
+              <button
+                className={styles.paginationButton}
+                onClick={handlePrevBlock}
+                disabled={currentPage <= 1}
+              >
+                Anterior
+              </button>
+              {generatePageNumbers().map((page) => (
+                <button
+                  key={page}
+                  className={
+                    page === currentPage
+                      ? styles.currentPageButton
+                      : styles.pageButton
+                  }
+                  onClick={() => handlePageChange(page)}
+                >
+                  {page}
+                </button>
+              ))}
+              <button
+                className={styles.paginationButton}
+                onClick={handleNextBlock}
+                disabled={currentPage >= totalPages}
+              >
+                Siguiente
+              </button>
+            </div>
+          </>
+        )}
       </div>
     </>
   );
