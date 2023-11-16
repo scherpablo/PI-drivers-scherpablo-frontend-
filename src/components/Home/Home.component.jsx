@@ -93,8 +93,7 @@ const HomeComponent = () => {
   };
 
   useEffect(() => {
-    dispatch(getDrivers(currentPage, pageSize));
-    allDrivers;
+    dispatch(getDrivers());
   }, [dispatch]);
 
   return (
@@ -144,8 +143,7 @@ const HomeComponent = () => {
             <option value="birthdate-desc">Nacimiento ⬇️ Z-A</option>
           </select>
         </form>
-      
-        {allDrivers.length === 0  && (
+        {allDrivers.length === 0 && (
           <p className={styles.noResultsMsg}>No se encontraron resultados.</p>
         )}
 
