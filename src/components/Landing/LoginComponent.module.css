@@ -86,6 +86,11 @@
           font-weight: 600;
           background-color: var(--green400);
           text-transform: uppercase;
+          cursor: pointer;
+
+          &:hover {
+            transform: scale(1.05);
+          }
         }
         .btnRegister {
           background-color: var(--amber400);

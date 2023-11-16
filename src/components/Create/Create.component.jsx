@@ -23,7 +23,6 @@ import {
 //STYLES
 import styles from "./CreateComponent.module.css";
 //ENVIRONMENT VARIABLES
-// const teamsUrl = import.meta.env.VITE_TEAMS_URL;
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
 //REGEX
 const uuidRegex =
