@@ -16,8 +16,6 @@ import {
 } from "./actionsTypes";
 
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
-// const registerUrl = import.meta.env.VITE_REGISTER_URL;
-// const driversUrl = import.meta.env.VITE_DRIVERS_URL;
 
 const login = ({ email, password }) => {
   return async (dispatch) => {

@@ -28,7 +28,6 @@ const App = () => {
     }
   }, [dispatch]);
 
-
   return (
     <>
       <div>
