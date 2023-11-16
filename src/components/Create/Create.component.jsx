@@ -23,7 +23,8 @@ import {
 //STYLES
 import styles from "./CreateComponent.module.css";
 //ENVIRONMENT VARIABLES
-const teamsUrl = import.meta.env.VITE_TEAMS_URL;
+// const teamsUrl = import.meta.env.VITE_TEAMS_URL;
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
 //REGEX
 const uuidRegex =
   /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/;
@@ -58,7 +59,7 @@ const CreateComponent = () => {
 
   const getAllTeams = async () => {
     try {
-      const { data } = await axios(teamsUrl);
+      const { data } = await axios(`${backendUrl}/drivers`);
       setAllTeams(data);
       return data;
     } catch (error) {
