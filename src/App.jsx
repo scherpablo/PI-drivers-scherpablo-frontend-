@@ -34,12 +34,12 @@ const App = () => {
         {user && <Navbar />}
         <Routes>
           <Route path={PATHROUTES.LOGIN} element={<Login />} />
-            <Route element={<ProtectedRoutes />} >
-              <Route path={PATHROUTES.HOME} element={<Home />} />
-              <Route path={PATHROUTES.CREATE} element={<Create />} />
-              <Route path={PATHROUTES.DETAIL} element={<Detail />} />
-              <Route path={PATHROUTES.ABOUT} element={<About />} />
-            </Route>
+          <Route element={<ProtectedRoutes />}>
+            <Route path={PATHROUTES.HOME} element={<Home />} />
+            <Route path={PATHROUTES.CREATE} element={<Create />} />
+            <Route path={PATHROUTES.DETAIL} element={<Detail />} />
+            <Route path={PATHROUTES.ABOUT} element={<About />} />
+          </Route>
         </Routes>
       </div>
     </>
