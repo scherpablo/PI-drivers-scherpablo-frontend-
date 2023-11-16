@@ -22,7 +22,6 @@ const HomeComponent = () => {
   const [nameFilter, setNameFilter] = useState("");
   const [teamFilter, setTeamFilter] = useState("");
   const [activeFilter, setActiveFilter] = useState("name");
-  const [showMsg, setShowMsg] = useState(false);
 
   const [currentPage, setCurrentPage] = useState(1);
   const pageSize = 9;
@@ -96,9 +95,6 @@ const HomeComponent = () => {
   useEffect(() => {
     dispatch(getDrivers(currentPage, pageSize));
     allDrivers;
-    if (allDrivers.length === 0) {
-      setShowMsg(true);
-    }
   }, [dispatch]);
 
   return (
@@ -148,7 +144,8 @@ const HomeComponent = () => {
             <option value="birthdate-desc">Nacimiento ⬇️ Z-A</option>
           </select>
         </form>
-        {showMsg && (
+      
+        {allDrivers.length === 0  && (
           <p className={styles.noResultsMsg}>No se encontraron resultados.</p>
         )}
 
