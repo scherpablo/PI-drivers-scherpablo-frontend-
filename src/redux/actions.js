@@ -15,14 +15,14 @@ import {
   DELETE_DRIVER,
 } from "./actionsTypes";
 
-const loginUrl = import.meta.env.VITE_LOGIN_URL;
-const registerUrl = import.meta.env.VITE_REGISTER_URL;
-const driversUrl = import.meta.env.VITE_DRIVERS_URL;
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
+// const registerUrl = import.meta.env.VITE_REGISTER_URL;
+// const driversUrl = import.meta.env.VITE_DRIVERS_URL;
 
 const login = ({ email, password }) => {
   return async (dispatch) => {
     try {
-      const { data } = await axios.post(loginUrl, { email, password });
+      const { data } = await axios.post(`${backendUrl}/login`, { email, password });
 
       if (data) {
         dispatch({
@@ -43,7 +43,7 @@ const login = ({ email, password }) => {
 const postUser = ({ email, password }) => {
   return async (dispatch) => {
     try {
-      const { data } = await axios.post(registerUrl, { email, password });
+      const { data } = await axios.post(`${backendUrl}/register`, { email, password });
 
       if (data) {
         dispatch({
@@ -69,7 +69,7 @@ const logout = () => {
 const getDrivers = () => {
   return async (dispatch) => {
     try {
-      const { data } = await axios(driversUrl);
+      const { data } = await axios(`${backendUrl}/drivers`);
 
       return dispatch({
         type: GET_DRIVERS,
@@ -84,7 +84,7 @@ const getDrivers = () => {
 const getDriverById = (id) => {
   return async (dispatch) => {
     try {
-      const { data } = await axios(`${driversUrl}/${id}`);
+      const { data } = await axios(`${backendUrl}/drivers/${id}`);
 
       return dispatch({
         type: GET_DRIVER_BY_ID,
@@ -99,7 +99,7 @@ const getDriverById = (id) => {
 const getDriverDetail = (id) => {
   return async (dispatch) => {
     try {
-      const { data } = await axios(`${driversUrl}/${id}`);
+      const { data } = await axios(`${backendUrl}/drivers/${id}`);
       return dispatch({
         type: GET_DRIVER_DETAIL,
         payload: data,
@@ -113,7 +113,7 @@ const getDriverDetail = (id) => {
 const getDriversByName = (queryName) => {
   return async (dispatch) => {
     try {
-      const { data } = await axios(`${driversUrl}?name=${queryName}`);
+      const { data } = await axios(`${backendUrl}/drivers?name=${queryName}`);
 
       return dispatch({
         type: GET_DRIVERS_BY_NAME,
@@ -175,7 +175,7 @@ const sortDriversByBirthdate = (order) => {
 const createDriver = (driver) => {
   return async (dispatch) => {
     try {
-      const { data } = await axios.post(driversUrl, driver);
+      const { data } = await axios.post(`${backendUrl}/drivers`, driver);
       return dispatch({
         type: CREATE_DRIVER,
         payload: data,
@@ -189,7 +189,7 @@ const createDriver = (driver) => {
 const updateDriver = (id, driver) => {
   return async (dispatch) => {
     try {
-      const { data } = await axios.put(`${driversUrl}/${id}`, driver);
+      const { data } = await axios.put(`${backendUrl}/drivers/${id}`, driver);
       return dispatch({
         type: UPDATE_DRIVER,
         payload: data,
@@ -203,7 +203,7 @@ const updateDriver = (id, driver) => {
 const deleteDriver = (id) => {
   return async (dispatch) => {
     try {
-      const { data } = await axios.delete(`${driversUrl}/${id}`);
+      const { data } = await axios.delete(`${backendUrl}/drivers/${id}`);
       return dispatch({
         type: DELETE_DRIVER,
         payload: data,
