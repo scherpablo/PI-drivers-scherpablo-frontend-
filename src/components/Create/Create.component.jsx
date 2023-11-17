@@ -58,7 +58,7 @@ const CreateComponent = () => {
 
   const getAllTeams = async () => {
     try {
-      const { data } = await axios(`${backendUrl}/drivers`);
+      const { data } = await axios(`${backendUrl}/teams`);
       setAllTeams(data);
       return data;
     } catch (error) {
