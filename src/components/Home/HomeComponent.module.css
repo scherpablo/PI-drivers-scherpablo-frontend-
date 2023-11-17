@@ -100,7 +100,23 @@
 /* MEDIAS QUERY */
 @media (max-width: 1140px) {
   .homeContainer {
-    width: 80vw;
+    background-image: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .pagination {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    width: auto;
+
+    .btnsPagination {
+      margin: 20px 0;
+    }
   }
 }
 
@@ -123,8 +139,7 @@
     display: flex;
     flex-direction: column;
     padding-top: 20px;
-    width: 80vw;
-    margin: 0 auto;
+    width: auto;
 
     .btnsPagination {
       margin: 20px 0;

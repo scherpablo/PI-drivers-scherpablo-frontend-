@@ -81,16 +81,23 @@
 }
 
 /* MEDIAS QUERY */
-@media (max-width: 480px) {
+@media (max-width: 1140px) {
     .cardComponent {
-        width: 350px;
+        width: 300px;
         height: auto;
     }
 }
 
 @media (max-width: 768px) {
     .cardComponent {
-        width: 300px;
+        width: 450px;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .cardComponent {
+        width: 350px;
         height: auto;
     }
 }
