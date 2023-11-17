@@ -58,12 +58,16 @@
 }
 
 /* MEDIAS QUERY */
-@media (max-width: 480px) {
+@media (max-width: 1140px) {
   .cardsContainer {
     display: grid;
-    grid-template-columns: repeat(1, 1fr) !important;
+    grid-template-columns: repeat(3, 1fr);
     width: 100vw;
-    min-width: 425px;
+    /* min-width: 425px; */
+ }
+
+ .cardsBtns {
+  display: none;
  }
 }
 
@@ -79,3 +83,14 @@
   display: none;
  }
 }
+
+@media (max-width: 480px) {
+  .cardsContainer {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: auto;
+    max-width: 350px;
+ }
+}
+
+
