@@ -8,6 +8,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  width: 100vw;
   min-height: 100vw;
 
   .formHome {
@@ -64,6 +65,8 @@
   }
 
   .pagination {
+    display: flex;
+    justify-content: center;
     margin-top: 10px;
     padding-bottom: 25px;
     text-align: center;
