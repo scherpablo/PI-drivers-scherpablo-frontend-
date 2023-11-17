@@ -53,6 +53,36 @@
 }
 
 /* MEDIAS QUERY */
+@media (max-width: 768px) {
+  .aboutContainer {
+    background-image: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: auto;
+    height: 1200px;
+    padding: 40px;
+    margin-top: -180px;
+
+    .aboutText {
+      width: auto;
+      height: auto;
+      padding: 50px 25px;
+
+      .aboutH2 {
+        font-size: 26px;
+        text-align: center;
+      }
+      .aboutH3 {
+        font-size: 22px;
+      }
+      .aboutP {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
 @media (max-width: 480px) {
   .aboutContainer {
     background-image: none;
