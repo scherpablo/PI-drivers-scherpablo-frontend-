@@ -200,4 +200,45 @@
 }
 
 /* MEDIAS QUERY */
+@media (max-width: 480px) {
+  .createContainer {
+    background-image: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
 
+    .createContainerForm {
+      transform: scale(0.85);
+      margin-top: -180px;
+
+      .createForm {
+        
+        .createTitleForm, .createLabelForm {
+          color: var(--amber400)
+        }
+        .buttonCreateForm {
+          background-color: var(--green400);
+          border: 2px solid var(--green400);
+          color: var(--black);
+        }
+      }
+    }
+
+    .modalContainerForm{
+      transform: scale(.95);
+      margin-top: -50px;
+      padding-bottom: 30px;
+      color: var(--amber400);
+
+      .textModal {
+        font-size: 16px;
+      }
+      .buttonOpenForm {
+        background-color: var(--amber600);
+        border: 2px solid var(--amber600);
+      }
+    }
+  }
+}
