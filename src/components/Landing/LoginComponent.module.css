@@ -10,7 +10,6 @@
   background-attachment: fixed;
   height: 104vh;
 
-
   .titleLogin {
     font-size: 60px;
     color: var(--white);
@@ -95,6 +94,31 @@
         .btnRegister {
           background-color: var(--amber400);
         }
+      }
+    }
+  }
+}
+
+/* MEDIAS QUERY */
+@media (max-width: 480px) {
+  .divLogin {
+    background-image: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 0 auto;
+
+    .titleLogin {
+      margin-top: -500px;
+      font-size: 45px;
+    }
+
+    .divForm {
+      .formLogin {
+        transform: scale(.9);
+        margin-top: -50px;
       }
     }
   }
