@@ -58,8 +58,18 @@ const HomeComponent = () => {
   };
 
   const handleNextBlock = () => {
-    setCurrentPage((prevPage) => Math.min(totalPages, prevPage + 10));
+    const maxVisiblePages = 10;
+  
+    setCurrentPage((prevPage) => {
+      const nextPage = Math.min(totalPages, prevPage + maxVisiblePages);
+      
+      if (nextPage > totalPages - maxVisiblePages) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      return nextPage;
+    });
   };
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
