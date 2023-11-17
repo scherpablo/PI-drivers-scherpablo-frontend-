@@ -151,7 +151,9 @@
       width: auto;
 
       .btnsPagination {
+        display: flex;
         margin: 20px 0;
+        transform: scale(.9);
       }
     }
   }
