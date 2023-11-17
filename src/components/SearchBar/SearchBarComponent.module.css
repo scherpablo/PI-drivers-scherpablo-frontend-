@@ -62,23 +62,14 @@
 }
 
 /* MEDIAS QUERY */
-@media (max-width: 1140px) {
-  .container {
-    flex-direction: column;
-  }
-}
-@media (max-width: 768px) {
-  .buttonsRow {
-    flex-direction: row;
-    align-items: center;
-  }
-  .inputRow {
-    display: flex;
-    justify-content: center;
-  }
-}
 @media (max-width: 480px) {
-  .buttonsRow {
-    transform: scale(0.8);
-  }
+    .container {
+      display: flex;
+      flex-direction: column;
+
+      .buttonsRow {
+        flex-direction: column;
+        transform: scale(0.9);
+      }
+    }
 }

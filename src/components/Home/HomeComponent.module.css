@@ -64,7 +64,6 @@
   }
 
   .pagination {
-    /* background-color: red; */
     margin-top: 10px;
     padding-bottom: 25px;
     text-align: center;
@@ -87,7 +86,6 @@
       margin: 0 5px;
       background-color: var(--black);
       color: var(--white);
-      /* text-align: center; */
     }
     .currentPageButton {
       width: 30px;
@@ -95,6 +93,30 @@
       background-color: var(--green400);
       color: var(--black);
       font-weight: 600;
+    }
+  }
+}
+
+/* MEDIAS QUERY */
+@media (max-width: 480px) {
+  .homeContainer {
+    background-image: none;
+
+    .formHome {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pagination {
+      display: flex;
+      flex-direction: column;
+      /* margin-top: -85px; */
+      /* border-top: 1px solid var(--white); */
+      padding-top: 20px;
+
+      .btnsPagination {
+        margin: 20px 0;
+      }
     }
   }
 }

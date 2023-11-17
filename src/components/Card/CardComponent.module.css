@@ -79,3 +79,10 @@
         }
     }
 }
+
+/* MEDIAS QUERY */
+@media (max-width: 480px) {
+    .cardComponent {
+        width: 350px;
+    }
+}

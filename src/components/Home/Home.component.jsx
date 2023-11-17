@@ -59,17 +59,16 @@ const HomeComponent = () => {
 
   const handleNextBlock = () => {
     const maxVisiblePages = 10;
-  
+
     setCurrentPage((prevPage) => {
       const nextPage = Math.min(totalPages, prevPage + maxVisiblePages);
-      
+
       if (nextPage > totalPages - maxVisiblePages) {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }
       return nextPage;
     });
   };
-  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -169,19 +168,21 @@ const HomeComponent = () => {
               >
                 Anterior
               </button>
-              {generatePageNumbers().map((page) => (
-                <button
-                  key={page}
-                  className={
-                    page === currentPage
-                      ? styles.currentPageButton
-                      : styles.pageButton
-                  }
-                  onClick={() => handlePageChange(page)}
-                >
-                  {page}
-                </button>
-              ))}
+              <div className={styles.btnsPagination}>
+                {generatePageNumbers().map((page) => (
+                  <button
+                    key={page}
+                    className={
+                      page === currentPage
+                        ? styles.currentPageButton
+                        : styles.pageButton
+                    }
+                    onClick={() => handlePageChange(page)}
+                  >
+                    {page}
+                  </button>
+                ))}
+              </div>
               <button
                 className={styles.paginationButton}
                 onClick={handleNextBlock}

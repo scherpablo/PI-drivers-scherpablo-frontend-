@@ -10,7 +10,7 @@ const NavbarComponent = () => {
   const is404ErrorPAge = pathname === PATHROUTES.ERROR;
 
   return (
-    <div className={styles.navCoontainer}>
+    <div className={styles.navContainer}>
       {!is404ErrorPAge && <SearchBarComponent />}
     </div>
   );
