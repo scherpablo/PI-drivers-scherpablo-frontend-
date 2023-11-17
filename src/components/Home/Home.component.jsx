@@ -143,11 +143,7 @@ const HomeComponent = () => {
             <option value="birthdate-desc">Nacimiento ⬇️ Z-A</option>
           </select>
         </form>
-        {allDrivers.length === 0 && (
-          <p className={styles.noResultsMsg}>No se encontraron resultados.</p>
-        )}
-
-        {allDrivers.length > 0 && (
+        {allDrivers.length > 0 ? (
           <>
             <CardsComponent
               allDrivers={allDrivers}
@@ -185,7 +181,9 @@ const HomeComponent = () => {
               </button>
             </div>
           </>
-        )}
+        ) : nameFilter !== "" || teamFilter !== "" ? (
+          <p className={styles.noResultsMsg}>No se encontraron resultados.</p>
+        ) : null}
       </div>
     </>
   );
