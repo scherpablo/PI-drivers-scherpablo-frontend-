@@ -94,6 +94,7 @@ const CreateComponent = () => {
       fecha_de_nacimiento: "",
       equipos: [],
     });
+    alert("piloto creado correctamente")
   };
 
   const handleChange = (e) => {
@@ -131,6 +132,7 @@ const CreateComponent = () => {
 
     if (isValid) {
       dispatch(updateDriver(driverId, modalFormData));
+      alert("piloto editado correctamente")
       closeModal();
     } else {
       alert(
@@ -141,6 +143,7 @@ const CreateComponent = () => {
 
   const handleDeleteDriver = () => {
     dispatch(deleteDriver(driverId));
+    alert("piloto eliminado correctamente")
     closeModal();
   };
 

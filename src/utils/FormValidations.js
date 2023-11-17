@@ -44,10 +44,7 @@ const validateDescription = (value) => {
   if (value.descripcion.length < 10 || value.descripcion.length > 100) {
     alert("descripción: mínimo 10 caracteres, máximo 100");
     return false;
-  } else if (containsSymbols(value.descripcion)) {
-    alert("la descripción no puede contener símbolos");
-    return false;
-  }
+  } 
   return true;
 };
 
