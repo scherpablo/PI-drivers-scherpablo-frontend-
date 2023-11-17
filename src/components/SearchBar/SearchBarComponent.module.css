@@ -73,3 +73,15 @@
       }
     }
 }
+
+@media (max-width: 768px) {
+    .container {
+      display: flex;
+      flex-direction: column;
+
+      .buttonsRow {
+        flex-direction: column;
+        transform: scale(0.9);
+      }
+    }
+}

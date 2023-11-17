@@ -113,10 +113,34 @@
       /* margin-top: -85px; */
       /* border-top: 1px solid var(--white); */
       padding-top: 20px;
+      width: 100vw;
 
       .btnsPagination {
         margin: 20px 0;
       }
     }
   }
+}
+
+@media (max-width: 768px) {
+    .homeContainer {
+      background-image: none;
+
+      .formHome {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    .pagination {
+      display: flex;
+      flex-direction: column;
+      padding-top: 20px;
+      width: 80vw;
+      margin: 0 auto;
+
+      .btnsPagination {
+        margin: 20px 0;
+      }
+    }
 }

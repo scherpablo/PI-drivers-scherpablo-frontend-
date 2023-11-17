@@ -84,5 +84,13 @@
 @media (max-width: 480px) {
     .cardComponent {
         width: 350px;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .cardComponent {
+        width: 300px;
+        height: auto;
     }
 }
