@@ -200,6 +200,89 @@
 }
 
 /* MEDIAS QUERY */
+@media (max-width: 1140px) {
+  .createContainer {
+    background-image: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+    .createContainerForm {
+      margin-top: -50px;
+
+      .createForm {
+        
+        .createTitleForm, .createLabelForm {
+          color: var(--amber400)
+        }
+        .buttonCreateForm {
+          background-color: var(--green400);
+          border: 2px solid var(--green400);
+          color: var(--black);
+        }
+      }
+    }
+
+    .modalContainerForm{
+      margin-top: 10px;
+      padding-bottom: 30px;
+      color: var(--amber400);
+
+      .textModal {
+        font-size: 16px;
+      }
+      .buttonOpenForm {
+        background-color: var(--amber600);
+        border: 2px solid var(--amber600);
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .createContainer {
+    background-image: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+    .createContainerForm {
+      transform: scale(0.95);
+      margin-top: -125px;
+
+      .createForm {
+        
+        .createTitleForm, .createLabelForm {
+          color: var(--amber400)
+        }
+        .buttonCreateForm {
+          background-color: var(--green400);
+          border: 2px solid var(--green400);
+          color: var(--black);
+        }
+      }
+    }
+
+    .modalContainerForm{
+      margin-top: -15px;
+      padding-bottom: 30px;
+      color: var(--amber400);
+
+      .textModal {
+        font-size: 16px;
+      }
+      .buttonOpenForm {
+        background-color: var(--amber600);
+        border: 2px solid var(--amber600);
+      }
+    }
+  }
+}
+
 @media (max-width: 480px) {
   .createContainer {
     background-image: none;
