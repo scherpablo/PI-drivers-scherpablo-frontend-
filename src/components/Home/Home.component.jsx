@@ -39,10 +39,8 @@ const HomeComponent = () => {
     const totalPages = Math.ceil(allDrivers.length / pageSize);
     const maxVisiblePages = 10;
 
-    // Calcula el número del bloque actual
     const currentBlock = Math.ceil(currentPage / maxVisiblePages);
 
-    // Calcula el inicio y el final del bloque actual
     const startPage = (currentBlock - 1) * maxVisiblePages + 1;
     const endPage = Math.min(currentBlock * maxVisiblePages, totalPages);
 
