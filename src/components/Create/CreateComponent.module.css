@@ -13,7 +13,7 @@
   flex-direction: column;
 
   .createContainerForm {
-    z-index: -1;
+    /* z-index: -1; */
 
     .createForm {
       display: flex;
@@ -27,7 +27,7 @@
       border-radius: 10px;
       border: 1px solid var(--white);
       box-shadow: rgba(255, 255, 255, 0.5) 0px 5px 15px;
-      z-index: -100;
+      /* z-index: -1; */
 
       .createTitleForm {
         font-size: 32px;
@@ -298,11 +298,13 @@
     .createContainerForm {
       transform: scale(0.85);
       margin-top: -180px;
+      z-index: -1;
 
       .createForm {
         .createTitleForm,
         .createLabelForm {
           color: var(--amber400);
+          z-index: -1;
         }
         .buttonCreateForm {
           background-color: var(--green400);
