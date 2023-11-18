@@ -13,6 +13,8 @@
   flex-direction: column;
 
   .createContainerForm {
+    z-index: -1;
+
     .createForm {
       display: flex;
       flex-direction: column;
@@ -25,6 +27,7 @@
       border-radius: 10px;
       border: 1px solid var(--white);
       box-shadow: rgba(255, 255, 255, 0.5) 0px 5px 15px;
+      z-index: -100;
 
       .createTitleForm {
         font-size: 32px;
@@ -213,9 +216,9 @@
       margin-top: -50px;
 
       .createForm {
-        
-        .createTitleForm, .createLabelForm {
-          color: var(--amber400)
+        .createTitleForm,
+        .createLabelForm {
+          color: var(--amber400);
         }
         .buttonCreateForm {
           background-color: var(--green400);
@@ -225,7 +228,7 @@
       }
     }
 
-    .modalContainerForm{
+    .modalContainerForm {
       margin-top: 10px;
       padding-bottom: 30px;
       color: var(--amber400);
@@ -255,9 +258,9 @@
       margin-top: -125px;
 
       .createForm {
-        
-        .createTitleForm, .createLabelForm {
-          color: var(--amber400)
+        .createTitleForm,
+        .createLabelForm {
+          color: var(--amber400);
         }
         .buttonCreateForm {
           background-color: var(--green400);
@@ -267,7 +270,7 @@
       }
     }
 
-    .modalContainerForm{
+    .modalContainerForm {
       margin-top: -15px;
       padding-bottom: 30px;
       color: var(--amber400);
@@ -297,9 +300,9 @@
       margin-top: -180px;
 
       .createForm {
-        
-        .createTitleForm, .createLabelForm {
-          color: var(--amber400)
+        .createTitleForm,
+        .createLabelForm {
+          color: var(--amber400);
         }
         .buttonCreateForm {
           background-color: var(--green400);
@@ -309,8 +312,8 @@
       }
     }
 
-    .modalContainerForm{
-      transform: scale(.95);
+    .modalContainerForm {
+      transform: scale(0.95);
       margin-top: -50px;
       padding-bottom: 30px;
       color: var(--amber400);
