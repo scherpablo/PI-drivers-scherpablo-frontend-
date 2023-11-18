@@ -173,5 +173,10 @@
         margin: 20px 0;
       }
     }
+
+    .noResultsMsg {
+      margin-top: 180px;
+      font-size: 32px;
+    }
   }
 }
