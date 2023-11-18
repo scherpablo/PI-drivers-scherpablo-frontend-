@@ -114,6 +114,32 @@
 }
 
 /* MEDIAS QUERY */
+@media (max-width: 1140px) {
+    .containerDivDetail{
+      background-image: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: auto;
+
+      .containerDriverDetail {
+        transform: scale(.9);
+        margin-top: 65px;
+
+        .containerImage {
+          display: flex;
+
+          .detailImage {
+            margin: 0 auto;
+          }
+          .divButtons {
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+}
+
 @media (max-width: 768px) {
     .containerDivDetail{
       background-image: none;
