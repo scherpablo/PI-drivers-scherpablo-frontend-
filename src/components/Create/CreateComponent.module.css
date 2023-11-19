@@ -256,7 +256,7 @@
       transform: scale(0.95);
 
       .createForm {
-        margin-top: -100px;
+        margin-top: -180px;
 
         .createTitleForm,
         .createLabelForm {
@@ -299,7 +299,7 @@
       transform: scale(0.85);
 
       .createForm {
-        margin-top: -100px;
+        margin-top: -300px;
 
         .createTitleForm,
         .createLabelForm {
