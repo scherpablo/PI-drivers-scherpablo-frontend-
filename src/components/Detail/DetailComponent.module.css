@@ -151,10 +151,12 @@
       .containerDriverDetail {
         transform: scale(.9);
         margin-top: 35px;
+        height: auto;
 
         .containerImage {
           display: flex;
           flex-direction: column;
+          height: auto;
 
           .detailImage {
             order: 2;
@@ -167,7 +169,7 @@
         }
 
         .containerDetails {
-          margin-top: 500px;
+          margin-top: auto;
         }
       }
     }
@@ -181,13 +183,19 @@
       justify-content: center;
       width: auto;
 
+      .titleDetail {
+        margin-top: -20px;
+      }
+
       .containerDriverDetail {
         transform: scale(.9);
-        margin-top: 10px;
+        margin-top: 25px;
+        height: auto;
 
         .containerImage {
           display: flex;
           flex-direction: column;
+          height: auto;
 
           .detailImage {
             order: 2;
@@ -200,7 +208,7 @@
         }
 
         .containerDetails {
-          margin-top: 550px;
+          margin-top: auto;
         }
       }
     }
