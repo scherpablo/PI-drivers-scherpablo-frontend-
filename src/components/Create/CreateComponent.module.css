@@ -13,8 +13,6 @@
   flex-direction: column;
 
   .createContainerForm {
-    /* z-index: -1; */
-
     .createForm {
       display: flex;
       flex-direction: column;
@@ -27,7 +25,6 @@
       border-radius: 10px;
       border: 1px solid var(--white);
       box-shadow: rgba(255, 255, 255, 0.5) 0px 5px 15px;
-      /* z-index: -1; */
 
       .createTitleForm {
         font-size: 32px;
@@ -213,9 +210,11 @@
     margin: 0 auto;
 
     .createContainerForm {
-      margin-top: -50px;
+      margin-top: 50px;
 
       .createForm {
+        margin-top: -100px;
+
         .createTitleForm,
         .createLabelForm {
           color: var(--amber400);
@@ -255,9 +254,10 @@
 
     .createContainerForm {
       transform: scale(0.95);
-      margin-top: -125px;
 
       .createForm {
+        margin-top: -100px;
+
         .createTitleForm,
         .createLabelForm {
           color: var(--amber400);
@@ -297,14 +297,13 @@
 
     .createContainerForm {
       transform: scale(0.85);
-      margin-top: -180px;
-      z-index: -1;
 
       .createForm {
+        margin-top: -100px;
+
         .createTitleForm,
         .createLabelForm {
           color: var(--amber400);
-          z-index: -1;
         }
         .buttonCreateForm {
           background-color: var(--green400);
