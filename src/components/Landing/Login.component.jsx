@@ -87,7 +87,7 @@ const LoginComponent = () => {
                 setEmail(trimmedValue);
                 setEmailError(trimmedValue.length > 0 && !validateEmail(trimmedValue) ? "Formato de correo inválido" : "");
               }}
-              placeholder="📧 Email"
+              placeholder="📧 Ej: correo@correo.com"
             />
             {emailError && <p className={styles.errorMsg}>{emailError}</p>}
             <input
@@ -101,7 +101,7 @@ const LoginComponent = () => {
                 setPassword(trimmedValue);
                 setPasswordError(trimmedValue.length > 0 && !validatePassword(trimmedValue) ? "Formato de contraseña inválido" : "");
               }}
-              placeholder="🔐 Password"
+              placeholder="🔐 Ej: Abcdef.1"
             />
             {passwordError && <p className={styles.errorMsg}>{passwordError}</p>}
             <div className={styles.iconPwd} onClick={toggleShowPwd}>
