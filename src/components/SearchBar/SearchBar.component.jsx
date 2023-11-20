@@ -37,11 +37,9 @@ const SearchBarComponent = () => {
             Inicio
           </button>
         </Link>
-      </div>
-      <div className={styles.buttonsRow}>
-        <button className={styles.buttonLogout} onClick={handleLogout}>
-          Cerrar Sesion
-        </button>
+          <button className={styles.buttonLogout} onClick={handleLogout}>
+            Cerrar Sesion
+          </button>
       </div>
     </div>
   );

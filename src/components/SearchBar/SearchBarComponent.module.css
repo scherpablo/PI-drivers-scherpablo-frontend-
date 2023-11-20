@@ -75,7 +75,6 @@
     flex-direction: column;
 
     .buttonsRow {
-      flex-direction: column;
       transform: scale(0.9);
     }
   }
@@ -87,7 +86,7 @@
       flex-direction: column;
 
       .buttonsRow {
-        flex-direction: column;
+        flex-wrap: wrap;
         transform: scale(0.9);
       }
     }
