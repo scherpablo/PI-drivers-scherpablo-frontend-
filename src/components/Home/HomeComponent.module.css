@@ -125,7 +125,6 @@
 
 @media (max-width: 768px) {
   .homeContainer {
-    background-image: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -152,7 +151,6 @@
 
 @media (max-width: 480px) {
   .homeContainer {
-    background-image: none;
     display: flex;
     flex-direction: column;
     justify-content: center;

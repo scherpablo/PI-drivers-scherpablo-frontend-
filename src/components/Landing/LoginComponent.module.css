@@ -103,18 +103,19 @@
 @media (max-width: 1140px) {
   .divLogin {
     background-image: none;
-  }
-}
-
-@media (max-width: 768px) {
-  .divLogin {
-    background-image: none;
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.9),
+        rgba(127, 127, 127, 0.6),
+        rgba(255, 255, 255, 0.3)
+      ),
+      url("https://www.eluniversal.com.co/binrepository/938x686/138c0/800d686/none/13704/FAEV/max-verstappen_7600761_20230402071436.jpg");
+    background-size: cover;
+    background-position: center;
   }
 }
 
 @media (max-width: 480px) {
   .divLogin {
-    background-image: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -129,7 +130,7 @@
 
     .divForm {
       .formLogin {
-        transform: scale(.9);
+        transform: scale(0.9);
         margin-top: -50px;
       }
     }
