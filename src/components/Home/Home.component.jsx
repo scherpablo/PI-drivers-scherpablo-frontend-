@@ -121,7 +121,7 @@ const HomeComponent = () => {
             onChange={(e) =>
               activeFilter === "name"
                 ? setNameFilter(e.target.value)
-                : setTeamFilter(e.target.value)
+                : setTeamFilter(e.target.value) 
             }
           />
           <select
