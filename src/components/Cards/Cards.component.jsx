@@ -15,11 +15,13 @@ const CardsComponent = ({
 
   const nextPage = () => {
     setCurrentPage(currentPage + 1);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const previousPage = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
