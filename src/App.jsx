@@ -13,6 +13,7 @@ import ProtectedRoutes from "./components/Utils/ProtectedRoutes.component";
 import About from "./views/About/About.view";
 import Create from "./views/Create/Create.view";
 import Detail from "./views/Detail/Detail.view";
+import Error404 from "./views/Error404/Error404.view";
 import Home from "./views/Home/Home.view";
 import Login from "./views/Login/Login.view";
 
@@ -40,6 +41,7 @@ const App = () => {
             <Route path={PATHROUTES.DETAIL} element={<Detail />} />
             <Route path={PATHROUTES.ABOUT} element={<About />} />
           </Route>
+          <Route path={PATHROUTES.ERROR} element={<Error404 />} />
         </Routes>
       </div>
     </>

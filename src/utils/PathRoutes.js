@@ -4,6 +4,7 @@ const PATHROUTES = {
     ABOUT: "/about",
     CREATE: "/create",
     DETAIL: "/detail/:id",
+    ERROR: "*"
 }
 
 export default PATHROUTES;
