@@ -135,9 +135,10 @@ const CreateComponent = () => {
       alert("piloto editado correctamente")
       closeModal();
     } else {
-      alert(
-        "Por favor, corrige los errores en el formulario antes de continuar."
-      );
+      // alert(
+      //   "Por favor, corrige los errores en el formulario antes de continuar."
+      // );
+      return;
     }
   };
 
