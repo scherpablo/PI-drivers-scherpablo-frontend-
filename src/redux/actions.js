@@ -15,7 +15,7 @@ import {
   DELETE_DRIVER,
 } from "./actionsTypes";
 
-const backendUrl = import.meta.env.VITE_BACK_URL_KEOYB || import.meta.env.VITE_BACK_URL_RENDER || import.meta.env.VITE_BACK_URL_LOCAL;
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 const login = ({ email, password }) => {
   return async (dispatch) => {
