@@ -10,6 +10,9 @@ export default defineConfig({
       }
     }
   },
+  server: {
+    port: 5176,
+  },
   testEnvironment: 'jsdom',
   testMatch: ['**/__tests__/**/*.{js,cjs,ts,jsx,tsx}'],
 })
